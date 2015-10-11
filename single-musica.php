@@ -32,16 +32,27 @@
 </article><!-- closing the main article -->
 <div class="advice">
 	<div>
-	<!-- @ http://goo.gl/EhuZLt 	<a href="https://www.pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'full' ) ); ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?>" target="_blank">Enviar a Pinterest</a> -->
-		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php the_permalink(); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'full' ) ); ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?>" target="_blank">Enviar a Pinterest</a>
+		<?php 
+		// check if there is a vertical image added and display it
+		$verticalImage = get_field('imagenVertical');
+		if( !empty($verticalImage) ): ?>
+		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php echo $verticalImage['url']; ?>&media=<?php echo $verticalImage['url']; ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?> - www.therockery.es" class="share-on-pinterest" target="_blank">
+		<?php else: ?>
+		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php the_permalink(); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'full' ) ); ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?>" target="_blank">
+		<?php endif; ?>
+		Enviar a Pinterest </a>
 	</div>
 </div>
+
+<?php 
+//showing the advice of related tags if there are any 
+$terms = get_the_terms( $post->ID, 'musica_tag' );
+if ( $terms ): ?>
 <div class="advice advice--small">
 	<div>
 		<p>Esta receta se encuentra (como otras tantas) dentro de las siguientes categorías:</p>
 		<ul class="list--row">
-			<?php 
-				$terms = get_the_terms( $post->ID, 'musica_tag' );
+				<?php
 				foreach ($terms as $term) {
 					$term_link = get_term_link( $term );
 					// If there was an error, continue to the next term.
@@ -55,8 +66,9 @@
 		</ul>
 	</div>
 </div>
-<div class="group">
+<?php endif; ?>
 
+<div class="group">
 	<section class="article__part grid-2-3 comments">
 		<?php comments_template( $file, true ); ?>
 	</section>
