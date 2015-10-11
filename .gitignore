@@ -1,0 +1,6 @@
+# Files to be ignored
+.DS_Store
+config.codekit
+# Folders to be ignored
+.codekit-cache
+.sass-cache

@@ -1,0 +1,59 @@
+// Responsive images
+img {
+	max-width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: rgb(233,233,233);
+	background-image: url('../img/bg.png');
+}
+
+/* apply a natural box layout model to all elements - http://goo.gl/rBvtqz -  */
+*, 
+*:before, 
+*:after {
+  -moz-box-sizing: 		border-box; 
+  -webkit-box-sizing: 	border-box; 
+  box-sizing: 			border-box;
+}
+
+/* All links without decoration */
+a {
+
+	text-decoration: none;
+}
+
+@media screen and (min-width: $tablet) {
+	
+	.site__head {
+		padding: 0;
+	}
+
+	.site__description {
+		@include fontSize(21px);
+	}
+}
+
+@media screen and (min-width: $preDesktop) {
+	
+	.page-wrap {
+		padding: $baseline;
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	
+	.page-wrap {
+		width: 94%;
+		margin: 0 auto;
+		padding: 0;
+	}
+}
+
+@media screen and (min-width: $afterDesktop) {
+	.page-wrap {
+		@include cf;
+		width: 60em; // 960 / 16
+	}
+}

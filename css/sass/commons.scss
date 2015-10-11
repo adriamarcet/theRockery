@@ -1,0 +1,148 @@
+p {
+
+}
+
+li,
+p {
+	@include font-size(1.4);
+	line-height: $baseline;
+	color: #333;
+	text-align: left;
+}
+
+em { font-style: italic; }
+
+strong { 
+	font-family: 'Roboto';
+	font-weight: 700;
+	color: black;
+}
+
+i { font-style: italic; }
+.article {
+	img { vertical-align: bottom; }
+}
+
+.option {
+	padding-bottom: 1.8rem;
+}
+
+.title {
+	@include font-size(2.1);
+	margin-bottom: $baseline;
+	line-height: $baseline;
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+.page-title {
+	@include font-size(1.6);
+	padding: 5rem 1rem;
+	color: #4c4c4c;
+	display: block;
+	background: white;
+	background: rgba(255,255,255,0.4);
+	text-shadow: 0 1px #fff;
+	border-top:1px solid #c1c1c1;
+	margin: $baseline 1rem;
+	margin-top: -2px;
+}
+
+.tag {
+	padding: 0.4rem;
+	margin: 0 1rem;
+	text-transform: uppercase;
+	
+	.tag-name {
+		@include font-size(1.2);
+		display: inline-block;
+	}
+}
+
+.tag__food {
+	
+	.tag-name {
+		color: $logo;
+	}
+}
+
+.tag__music {
+
+	.tag-name {
+		color: #191919;
+	}
+}
+
+.related {
+	margin: px2em(20) 0;
+	
+	.sub-title {
+		font-size: px2em(12);
+		text-transform: uppercase;
+		color: #333;
+		padding: px2em(5, 12);
+		display: inline-block;
+		font-weight: bold;
+	}
+
+	ul {
+		padding: px2em(10) 0;
+	}
+
+	li {
+		@include cf;
+		text-align: left;
+		
+		a {
+			font-size: px2em(12);
+			padding: px2em(5, 12) 0 px2em(8,12);
+			border-bottom: 1px solid;
+			text-decoration: none;
+		}
+	}
+
+	.category {
+		@include border-box;
+		width: 84 / 310 * 100%;
+		display: block;
+		float: left;
+		padding-left: px2em(5, 12);
+	}	
+
+	.reading {
+		@include border-box;
+		@include truncate;
+		width: 226 / 310 * 100%;
+		display: block;
+		float: left;
+		padding-right: px2em(5, 12);
+	}
+}
+
+.food {
+	.related {
+		background-color: white;
+		li {
+			a {
+				color: #037bd7;
+				border-color: #95b5cd;
+				//text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+			}
+		}
+
+		.sub-title {
+			background-color: #037bd7;
+			color: white;
+		}
+	}
+}
+
+@media screen and (min-width: 780px) {
+/*	.page-wrap {
+		width: 90%;
+		margin: 0 auto;
+	}*/
+}

@@ -1,0 +1,60 @@
+input,
+select,
+textarea {
+	@include fontSize(16px);
+	width: 100%;
+	border: 0;
+	padding: 0;
+	line-height: $baseline;
+}
+
+textarea,
+input {
+	padding-left: 5px;
+	// Font family affect to input's line-height > http://goo.gl/GzQzej
+	font-family: Helvetica, sans-serif;
+	// Modify the glowing rectangle on focus > http://goo.gl/pVqBIJ
+	outline: 3px solid gainsboro;
+
+	//box model to bloc to enter the baseline grid?
+	display: block;
+
+	&:focus {
+		outline: 3px solid #8DCBFF;
+	}
+}
+
+textarea {
+	height: $baseline*8;
+	display: block;
+}
+
+label {
+	//exception for the labels on identation
+	text-indent: 0;
+
+	text-align: left;
+
+	& ~ * {
+		margin-top: 0;
+	}
+}
+
+
+.input__submit {
+	cursor: pointer;
+	padding: ($baseline);
+	display: block;
+	outline: 3px solid white;
+	background-color: gainsboro;
+
+	&:hover {
+		background-color: #8DCBFF;
+		color: white;
+	}
+}
+
+.required {
+	@extend sup;
+	color: $alert--red;
+}

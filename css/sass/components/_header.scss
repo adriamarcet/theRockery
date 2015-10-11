@@ -1,0 +1,67 @@
+header {
+
+}
+
+.top-cover {
+	width: 100%;
+}
+
+.logo {
+	display: block;	
+	color: $logo;
+	margin-top: $baseline;
+
+	span {
+		font-family: Helvetica;
+		text-transform: uppercase;
+
+		&.the {
+			@include font-size(2.2);
+			display: block;
+			line-height: $baseline;
+		}
+
+		&.rockery {
+			@include font-size(5.6);
+			line-height: $baseline*2;
+			font-weight: bold;
+			display: block;
+		}
+	}
+}
+
+.site-description {
+	@include font-size(1.2);
+	line-height: $baseline;
+	text-transform: uppercase;
+}
+
+.page-title {
+	@include font-size(2);
+	line-height: $baseline;
+	color: #4c4c4c;
+	padding: $baseline*2 1rem $baseline*2 - 0.1;
+}
+
+
+@media screen and (min-width: 460px) {
+	header {
+		display: table;
+		width: 100%;
+	}
+
+	.logo {
+		display: inline-block;
+	}
+
+	.site-description {
+		@include font-size(1.9);
+		padding: 0;
+		color: rgb(107, 107, 107);
+	}
+
+	.page-title {
+		@include font-size(2);
+		padding: 3rem 1rem;
+	}
+}

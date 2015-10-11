@@ -1,0 +1,36 @@
+.ingridients {
+	
+	ul {
+		border-radius: 4px 4px 0 0;
+		background-color: #fff6ee;
+	}
+
+	li {
+		//border-bottom: 1px solid rgb(208, 202, 204);
+		//simulate borders with box-shadow to prevent the vertical rhtyhm to break with borders
+		-webkit-box-shadow: inset 0px -4px 0px -3px rgb(208, 202, 204);
+		-moz-box-shadow: inset 0px -4px 0px -3px rgb(208, 202, 204);
+		box-shadow: inset 0px -4px 0px -3px rgb(208, 202, 204);
+		
+		color: rgb(102, 102, 102);
+		// this is an exception to center up and down the sentence
+		// the sum of up and down padding has to be equal to $baseline
+		padding: #{$baseline/2} 26px #{$baseline/2};
+		margin:0;
+	}
+}
+
+// Triggered by JS when clicked
+.ingridients__selected {
+	background: #F9E7D8;
+}
+
+@media screen and (min-width: $desktop) {
+	.ingridients {
+		float: right;
+		
+		li:hover {
+			background-color: #FFF0E4;
+		}
+	}
+}

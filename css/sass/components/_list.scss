@@ -1,0 +1,47 @@
+ol {
+	li {
+		text-align: left;
+	}
+}
+
+.list--row {
+	@include cf;
+	margin-top: 0;
+	
+	li {
+		display: inline-block;
+		padding: 0 $baseline;
+		margin-left: -#{$baseline};
+	}
+}
+
+.list--inline {
+	
+	li {
+		display: inline-block;
+		padding: 0 $baseline;
+		margin-left: -#{$baseline};
+	}
+}
+
+@media screen and (min-width: $tablet) {
+	
+	.list {
+		
+		@include cf;
+		margin-top: 0;
+		display: block;
+
+		li {
+			width: 1/2*100%;
+			float: left;
+			margin-top: $baseline;
+		}
+
+		& li:nth-child(1),
+		& li:nth-child(2)  {
+			
+			margin-top: 0;
+		}
+	}
+}

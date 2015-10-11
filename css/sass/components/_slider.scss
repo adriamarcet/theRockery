@@ -1,0 +1,57 @@
+.slider {
+position: relative;
+
+	.slider__mainImg{
+		display: block;
+		height: $baseline*12;
+		width: 100%;
+		background-size: cover;
+		background-position: 48%;
+		
+		img {
+position: absolute;
+			top: 1px;
+			left: 0px;
+			right: 0px;
+			height: $baseline*8;
+			opacity: 0;
+		}
+	}
+
+	img {
+		display: none;
+	}
+}
+
+@media screen and (min-width: $tablet) {
+	.slider {
+		width: 1/2*100%;
+		float: right;
+	}
+
+	.slider__extraImg {
+		@include cf;
+	
+		margin-top: 0;
+		overflow: hidden;
+		z-index: 1;
+
+		border-top: 1px solid white;
+		height: ($baseline*2)-1;
+		margin-bottom: -($baseline*2)+1;
+		background-color: desaturate(lighten(#FF6C12, 42), 67);
+
+		img {
+			width: 1/4*100%;
+			height: auto;
+			margin: 0;
+			display: block;
+			float: left;
+		}
+
+		li {
+			margin-top: 0;
+			cursor: pointer;
+		}
+	}
+}

@@ -1,0 +1,88 @@
+/*to be change to .site-menu in wp also*/
+#site-menu {
+	display: none;
+}
+
+.menu {
+	
+	.current-menu-item .menu__option,	
+	.current-menu-parent .menu__option {
+		/*
+		border-bottom: 3px solid $foodColor;
+		//To keep vertical rythm substract the border width
+		padding-bottom: ($baseline)-3;
+		*/
+
+		color: $baseColor;
+	}
+
+	.menu__option {
+		padding-bottom: $baseline;
+		display: block;
+
+		&:hover {
+			border-bottom: 3px solid $baseColor;
+			padding-bottom: ($baseline)-3;
+		}
+	}
+
+	a {
+		display: inline-block;
+	}
+}
+
+.menu__categories {
+
+	ul {
+		@include cf;
+	}
+
+	li {
+		margin-top: 0;
+		width: 1/4*100%;
+		display: block;
+		float: left;
+	}
+
+	& + * {
+		margin-top: 0;
+	}	
+}
+
+.menu--combined {
+	display: none;
+}
+
+
+@media screen and (min-width: $tablet) {
+	.menu--combined {
+		@include cf;
+		margin-top: 0;
+		display: block;
+		
+		ul {
+			@include cf;
+			width: 50%;
+			display: block;
+			float: left;
+		}
+		
+		li {
+			margin-top: 0;
+			width: 1/4*100%;
+			display: block;
+			float: left;
+		}
+
+		& + * {
+			margin-top: 0;
+		}
+	}
+
+	.menu__categories {
+
+		& + *:not(.list) {
+			margin-top: 0;
+		}
+	}
+}

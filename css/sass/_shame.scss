@@ -1,0 +1,232 @@
+.social__links {
+	@include cf;
+	padding-right: $baseline;
+	text-align: left;
+
+	a {
+		width: calc(100%/3);
+		height: $baseline*2;
+		margin-top: 0;
+		color: white;
+		padding-top: $baseline/2;
+		text-indent: $baseline/2;
+		display: block;
+		float: left;
+
+		&:hover {
+			-webkit-box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,1);
+			-moz-box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,1);
+			box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,1);
+		}
+	}
+
+	.social__links--facebook {
+		background-color: #3c5a99;
+	}
+	
+	.social__links--googleplus {
+		background-color: #db4d44;
+	}
+
+	.social__links--pinterest {
+		background-color: #c92129;
+	}
+}
+
+.fb-like {
+	overflow: hidden;
+	width: 98px;
+	height: 20px;
+	border: 0;
+}
+
+// Adjusting the images inserted throught CMS.
+// This class is added with site.js:96
+.js-imageInContent {
+	display: table;
+	margin-top: $baseline;
+}
+//
+.hidden {
+	display: none;
+}
+// Text for formated code inside comments, inside article
+.form-allowed-tags {
+	display: none;
+}
+
+// The image has to be inside the vertical grid (changin its size?)
+#comment-preview {
+	img {
+		display: none;
+	}
+}
+	
+.has-embed {
+	overflow: hidden;
+	height: 100%;
+}
+
+object,
+iframe {
+	// Prevent any embed code to go over 100%
+	// width: 100% !important;
+	// Align embeded content to Vertical Grid
+	height: $baseline*20 !important;
+}
+
+.tagged {
+	@extend .small;
+	background-color: #F7F7F7;
+	padding: 3px 5px;
+	text-transform: uppercase;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: #{(11/16)}rem;
+	line-height: 1;
+	border: 1px solid gainsboro;
+	font-family: sans-serif;
+}
+
+/* This always requires an instanly followed wrapper */
+.advice {
+position: relative;
+
+	// padding: $baseline;
+	margin-top: ($baseline*2)-1px;
+	
+	& > *:first-child {
+		padding: $baseline;
+		// Border as a BShadow to maintain the baseline grid
+		border-top: 1px solid #afafaf;
+		display: block;
+	}
+
+	&:before {
+position: absolute;
+
+		content: '';
+		width: 10px;
+		height: 10px;
+		display: block;
+
+		background-color: gainsboro;
+		//background-color: transparent;
+		//background-image: url('../img/bg.png');
+
+		border: 1px solid #afafaf;
+		border-radius: 1px;
+
+		display: inline-block;
+		left: 50%;
+		//trick to really center the container
+		-webkit-transform: translate(-50%, -50%) skew(-20deg);
+		-ms-transform: translate(-50%, -50%) skew(-20deg); /* IE 9 */
+		transform: translate(-50%, -50%) skew(-20deg);
+		top: 0;
+	}
+
+	& ~ .advice {
+		margin-top: -1px;
+	}
+}
+
+.advice--small {
+
+	p, li, span {
+		@extend .small;
+	}
+}
+
+.related__tags {
+	li {
+		margin: 0;
+		display: inline-block;
+		padding: 0 6px;
+	}
+}
+
+.related__card {
+
+	cursor: pointer;
+	-webkit-box-shadow: 0px 2px 0px -1px rgba(220,220,220,1);
+	-moz-box-shadow: 0px 2px 0px -1px rgba(220,220,220,1);
+	box-shadow: 0px 2px 0px -1px rgba(220,220,220,1);
+
+
+	p {
+		text-align: center;
+		color: $baseColor;
+		margin-top: 0;
+		padding: $baseline/2;
+	}
+
+	&:hover {
+		
+		background: $baseColor;
+		
+		p, a {
+			color: white;
+		}
+	}
+}
+
+.related__thumb {
+	// width: $baseline*5;
+	height: $baseline*5;
+	display: block;
+	
+
+	background-size: cover;
+	background-position: 50%;
+
+	img {
+		display: none;
+	}
+}
+
+
+
+
+
+// Any tooltip tag requires the title attr on it
+@media screen and (min-width: $desktop) {
+
+	.tooltip {
+	position: relative;
+
+		&:before {
+			//@extend .small;
+			display: none;
+			position: absolute;
+			bottom: 100%;
+			left: 100%;
+			//trick to really center the container
+			-webkit-transform: translate(-2%, 28%);
+			-ms-transform: translate(-2%, 28%);
+			transform: translate(-2%, 28%);
+
+
+			content: attr(title);
+			color: gray;
+			border: 1px solid gainsboro;
+			background-color: rgba(255,255,255,0.8);
+			padding: $baseline/4;
+			line-height: 1;
+		}
+
+		&:after {
+			//@extend sup;
+			content: '+';
+			display: inline-block;
+		}
+
+
+		&:hover {
+			&:before {
+				display: block;
+				display: inline-table;
+			}
+		}
+	}
+}

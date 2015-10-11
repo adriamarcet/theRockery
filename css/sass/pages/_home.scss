@@ -1,0 +1,18 @@
+@media screen and (min-width: $panoramic) {
+	
+	.home {
+
+		.page-wrap {
+			width: 85%;
+		}
+
+		.section {
+			width: 1/2*100%;
+			float: left;
+		}
+
+		.footer {
+			clear: left;
+		}
+	}
+}

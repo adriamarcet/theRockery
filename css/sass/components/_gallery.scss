@@ -1,0 +1,10 @@
+#gallery {
+	@include cf;
+	li {
+		a {
+			width: 33.333333333333333%;
+			display: block;
+			float: left;
+		}
+	}
+}

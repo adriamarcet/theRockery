@@ -1,0 +1,32 @@
+@charset "UTF-8";
+//Stylesheets imported from the root folder
+@import "base.scss";
+@import "reset.scss";
+@import "colors.scss";
+@import "typography.scss";
+@import "layout.scss";
+@import "globals.scss";
+
+//Modules or components
+@import "components/inputs.scss";
+@import "components/buttons.scss";
+@import "components/logo.scss";
+@import "components/card.scss";
+@import "components/slider.scss";
+@import "components/switcher.scss";
+@import "components/menus.scss";
+@import "components/list.scss";
+@import "components/comments.scss";
+@import "components/footer.scss";
+@import "components/icons.scss";
+
+
+@import "components/recipes/_recipe__ingridients";
+@import "components/recipes/_recipe__details";
+@import "components/recipes/_recipe__notes.scss";
+@import "components/recipes/_recipe__directions.scss";
+
+@import "pages/article.scss";
+@import "pages/_home.scss";
+
+@import "shame.scss";

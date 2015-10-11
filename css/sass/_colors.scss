@@ -1,0 +1,6 @@
+$baseColor: #FF6C12;
+$textColor: desaturate(darken($baseColor, 43), 94);
+//$link: lighten($baseColor, 3);
+$link: desaturate(adjust_hue(darken($baseColor, 4), 0), 4); //f56005
+$bgColor: lighten($baseColor, 75);
+$alert--red: desaturate(adjust_hue(darken($baseColor, 6), 330), 12);

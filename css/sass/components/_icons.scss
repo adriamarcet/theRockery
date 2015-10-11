@@ -1,0 +1,58 @@
+[class^=i-] {
+	background-image: url('../img/icons/i.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+	display: inline-block;
+	width: 16px;
+	height: 18px;
+	margin-right: 6px;
+	margin-bottom: -4px;
+}
+
+.i-prepTime {
+	background-image: url('../img/icons/i-time.png');
+}
+
+.i-ovenTime {
+	background-image: url('../img/icons/i-ovenTime.png');
+}
+
+.i-moldShape {
+	background-image: url('../img/icons/i-moldShape.png');
+}
+
+.i-moldSize {
+	background-image: url('../img/icons/i-moldSize.png');
+}
+
+.i-peeps {
+	background-image: url('../img/icons/i-peeps.png');
+}
+
+.i-facebook {
+	background-color: #3B5998;
+
+	&:hover:after {
+		content: "acebook";
+		display: inline-block;
+	}
+}
+
+.i-google {
+	background-color: #F90101;
+
+	&:hover:after {
+		content: "oogle+";
+		display: inline-block;
+	}
+}
+
+.i-pinterest {
+	background-color: #cb2027;
+
+	&:hover:after {
+		content: "interest";
+		display: inline-block;
+	}
+}

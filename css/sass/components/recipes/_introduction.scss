@@ -1,0 +1,14 @@
+#introduction {
+
+}
+
+.date {
+	@include font-size(1.2);
+	color: #4c4c4c;
+	padding-bottom: $baseline;
+	
+	text-align: center;
+	& > span {
+		padding: 0 0.2rem;
+	}
+}

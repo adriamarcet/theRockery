@@ -1,0 +1,19 @@
+.switcher {
+	a {
+		color: $textColor;
+		font-family: 'Arvo', Helvetica, sans-serif;
+	}
+}
+
+.selected {
+	border-bottom: 5px solid lighten($baseColor, 26);
+	padding-bottom: 4px;
+	position: relative;
+	z-index: 100;
+}
+
+@media screen and (min-width: $preTablet) {
+	.selected {
+		padding-bottom: 4px;
+	}
+}
