@@ -15,7 +15,6 @@
 		<h3 class="creation">Por <span itemprop="author"><?php echo get_the_author() ; ?></span>, <?php echo '<time class="date" datetime="'.get_the_date('Y-m-d').'" itemprop="datePublished" content="'.get_the_date('c').'">'.get_the_date('j').''.' de '.get_the_date('F').' de '.get_the_date('Y').'</time>';?></h3>
 	</header>
 	<div class="group">
-		
 		<?php 
 		// check if the flexible content field has rows of data
 		if( have_rows('detalles_receta') ):
@@ -115,8 +114,16 @@
 
 <div class="advice print">
 	<div>
-		<a href="javascript:window.print()"><span class="tooltip" title="…o guardar como PDF">Imprime la receta</span></a> o <a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php the_permalink(); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'full' ) ); ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?>" class="share-on-pinterest" target="_blank"> envíala a Pinterest </a>
-
+		<a href="javascript:window.print()"><span class="tooltip" title="…o guardar como PDF">Imprime la receta</span></a> o 
+		<?php 
+		// check if there is a vertical image added and display it
+		$verticalImage = get_field('imagenVertical');
+		if( !empty($verticalImage) ): ?>
+		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php echo $verticalImage['url']; ?>&media=<?php echo $verticalImage['url']; ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?> - www.therockery.es" class="share-on-pinterest" target="_blank">
+		<?php else: ?>
+		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php the_permalink(); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'full' ) ); ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?> - www.therockery.es" class="share-on-pinterest" target="_blank">
+		<?php endif; ?>
+		envíala a Pinterest </a>
 	</div>
 </div>
 
