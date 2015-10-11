@@ -127,25 +127,26 @@
 	</div>
 </div>
 
+<?php //showing the advice of related tags if there are any 
+$terms = get_the_terms( $post->ID, 'recetas_tag' );
+if($terms) : ?>
 <div class="advice advice--small">
 	<div>
 		<p>Esta receta se encuentra (como otras tantas) dentro de las siguientes categorías:</p>
 		<ul class="list--row">
-			<?php 
-				$terms = get_the_terms( $post->ID, 'recetas_tag' );
-				foreach ($terms as $term) {
-					$term_link = get_term_link( $term );
-					// If there was an error, continue to the next term.
-					if ( is_wp_error( $term_link ) ) {
-						continue;
-					}
-					// We successfully got a link. Print it out.
-					echo '<li><a href="' . esc_url( $term_link ) . '">' . $term->name . ' (' . $term->count . ')</a></li>';
+			<?php foreach ($terms as $term) {
+				$term_link = get_term_link( $term );
+				// If there was an error, continue to the next term.
+				if ( is_wp_error( $term_link ) ) {
+					continue;
 				}
-			?>
+				// We successfully got a link. Print it out.
+				echo '<li><a href="' . esc_url( $term_link ) . '">' . $term->name . ' (' . $term->count . ')</a></li>';
+			} ?>
 		</ul>
 	</div>
 </div>
+<?php endif; ?>
 
 <div class="group">
 	
