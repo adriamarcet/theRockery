@@ -104,8 +104,10 @@ h4,
 
 .title__category {
   background: white;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 26px; }
+  padding: 26px;
+  margin: 0 13px 0;
+  border-radius: 3px 3px 0 0;
+  border-bottom: 1px solid transparent; }
   .title__category + * {
     margin-top: 0; }
 
@@ -193,6 +195,19 @@ sub {
     font-size: 14px;
     font-size: 0.875rem;
     line-height: 1.85714; } }
+@media screen and (min-width: 40em) {
+  .title__category {
+    padding: 26px 52px;
+    margin: 0 52px 0; } }
+@media screen and (min-width: 54.375em) {
+  .title__category {
+    padding: 26px 104px; } }
+@media screen and (min-width: 58.3125em) {
+  .title__category {
+    padding: 26px 130px;
+    margin: 0 78px 0; }
+    .title__category p {
+      padding: 0 26px; } }
 .group {
   padding-left: 26px; }
 
