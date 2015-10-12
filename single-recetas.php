@@ -115,7 +115,7 @@
 
 <div class="advice print">
 	<div>
-		<a href="whatsapp://send?text= Comparto esta receta contigo a través de The Rockery: <?php the_permalink(); ?>" data-action="share/whatsapp/share" class="hide-med hide-large">Compartir por Whatsapp</a>
+		<a href="whatsapp://send?text= Comparto esta receta contigo a través de The Rockery: <?php the_permalink(); ?>" data-action="share/whatsapp/share" class="hide-med hide-large">Compártela por Whatsapp</a>
 		<a href="javascript:window.print()" class="hide-small"><span class="tooltip" title="…o guardar como PDF">Imprime la receta</span></a> o 
 		<?php 
 		// check if there is a vertical image added and display it

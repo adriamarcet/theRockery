@@ -991,6 +991,8 @@ iframe {
     padding: 26px;
     border-top: 1px solid #afafaf;
     display: block; }
+  .advice * {
+    margin-top: 0; }
   .advice:before {
     position: absolute;
     content: '';

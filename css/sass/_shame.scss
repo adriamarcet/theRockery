@@ -102,6 +102,10 @@ position: relative;
 		display: block;
 	}
 
+	& * {
+		margin-top: 0;
+	}
+
 	&:before {
 position: absolute;
 

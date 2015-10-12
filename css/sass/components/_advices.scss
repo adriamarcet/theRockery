@@ -3,4 +3,8 @@
 	line-height: 2.1rem;
 	color: #4c4c4c;
 	padding: 2rem 1rem;
+
+	div * + * {
+		margin-top: 0;
+	}
 }
