@@ -24,6 +24,10 @@ a {
 	text-decoration: none;
 }
 
+.hide-small {
+	display: none;
+}
+
 @media screen and (min-width: $tablet) {
 	
 	.site__head {
@@ -33,12 +37,28 @@ a {
 	.site__description {
 		@include fontSize(21px);
 	}
+
+	.hide-small {
+		display: inline-block;
+	}
+
+	.hide-med {
+		display: none;
+	}
 }
 
 @media screen and (min-width: $preDesktop) {
 	
 	.page-wrap {
 		padding: $baseline;
+	}
+
+	.hide-med {
+		display: inline-block;
+	}
+
+	.hide-large {
+		display: none;
 	}
 }
 
