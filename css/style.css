@@ -544,6 +544,8 @@ label {
 #site-menu {
   display: none; }
 
+.menu a {
+  color: black; }
 .menu .current-menu-item .menu__option,
 .menu .current-menu-parent .menu__option {
   /*
@@ -551,7 +553,9 @@ label {
   //To keep vertical rythm substract the border width
   padding-bottom: ($baseline)-3;
   */
-  color: #FF6C12; }
+  color: #FF6C12;
+  border-bottom: 3px solid #FF6C12;
+  padding-bottom: 23px; }
 .menu .menu__option {
   padding-bottom: 26px;
   display: block; }
