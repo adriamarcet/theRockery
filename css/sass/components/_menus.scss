@@ -4,6 +4,10 @@
 }
 
 .menu {
+
+	a {
+		color: black;
+	}
 	
 	.current-menu-item .menu__option,	
 	.current-menu-parent .menu__option {
@@ -12,8 +16,9 @@
 		//To keep vertical rythm substract the border width
 		padding-bottom: ($baseline)-3;
 		*/
-
 		color: $baseColor;
+		border-bottom: 3px solid $baseColor;
+		padding-bottom: ($baseline)-3;
 	}
 
 	.menu__option {
