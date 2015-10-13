@@ -197,15 +197,10 @@ sub {
     line-height: 1.85714; } }
 @media screen and (min-width: 40em) {
   .title__category {
-    padding: 26px 52px;
-    margin: 0 52px 0; } }
-@media screen and (min-width: 54.375em) {
-  .title__category {
-    padding: 26px 104px; } }
+    padding: 26px 156px; } }
 @media screen and (min-width: 58.3125em) {
   .title__category {
-    padding: 26px 130px;
-    margin: 0 78px 0; }
+    padding: 26px 208px; }
     .title__category p {
       padding: 0 26px; } }
 .group {

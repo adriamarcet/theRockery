@@ -177,17 +177,7 @@ sub {
 @media screen and (min-width: $tablet) {
 	.title__category {
 
-		padding: $baseline $baseline*2;
-		margin: 0 $baseline*2 0;
-	}
-}
-
-
-@media screen and (min-width: $preDesktop) {
-
-	.title__category {
-
-		padding: $baseline $baseline*4;
+		padding: $baseline $baseline*6;
 	}
 }
 
@@ -195,8 +185,7 @@ sub {
 
 	.title__category {
 
-		padding: $baseline $baseline*5;
-		margin: 0 $baseline*3 0;
+		padding: $baseline $baseline*8;
 
 		p {
 			padding: 0 $baseline;
