@@ -56,9 +56,19 @@
 					echo '<span class="small">Cantidad: '. $numCantidad .'</span>';
 
 				endif;
-
 			echo '</div>';
 			endwhile;
+
+			//checking if is an easy recipie
+			$terms = get_the_terms( $post->ID, 'recetas_cat' );
+			if ( $terms && ! is_wp_error( $terms ) ) : 
+				foreach ( $terms as $term ) {
+					if( $term->name == "fácil") {
+						// if is easy print the info
+						echo '<div class="easyToDo"><span class="small">Receta fácil de hacer</span></div>';
+					}
+				}
+			endif;
 		echo '</section>';
 		else :
 		// no layouts found

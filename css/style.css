@@ -826,6 +826,9 @@ ol li {
     border-radius: 3px;
     padding: 0 6px;
     margin: 0 6px 26px; }
+  .recipe__details .easyToDo {
+    color: white;
+    background-color: #009ce3; }
 
 @media screen and (min-width: 40em) {
   .recipe__details {
@@ -910,6 +913,22 @@ ol li {
     float: left; }
   .home .footer {
     clear: left; } }
+.sticker {
+  background-color: #009ce3;
+  border: 1px solid #B9B8B8;
+  border-top: 0;
+  display: inline-block;
+  color: white;
+  padding: 20px;
+  border-radius: 0 0 50% 50%;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 26px;
+  text-transform: capitalize; }
+  .sticker:hover {
+    border-color: white; }
+
 .social__links {
   padding-right: 26px;
   text-align: left; }

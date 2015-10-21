@@ -14,4 +14,18 @@
 		<h1 class="title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 		<h2><?php the_field('subtitulo'); ?></h2>
 	</div>
+	
+	<?php
+		$terms = get_the_terms( $post->ID, 'recetas_cat' );
+		if ( $terms && ! is_wp_error( $terms ) ) : 
+			
+			foreach ( $terms as $term ) {
+
+				if( $term->name == "fácil") {
+					echo '<a href="' . get_term_link( $term ) . '" title="' . sprintf( __( 'Clic aquí para ver todas las recetas %ses de hacer', '' ), $term->name ) . '" class="sticker">' . $term->name . '</a>';
+				}
+			}
+
+		endif;
+	?>
 </div>
