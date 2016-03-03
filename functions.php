@@ -359,7 +359,11 @@
 		wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery' ) );
 		wp_enqueue_script( 'site' );
 		wp_enqueue_style( 'screen' );
-	}	
+
+		wp_register_script( 'unslider', get_template_directory_uri().'/js/unslider.js', array( 'jquery' ) );
+		wp_enqueue_script( 'unslider' );
+		wp_enqueue_style( 'screen' );
+	}
 
 	/* ========================================================================================================================
 	

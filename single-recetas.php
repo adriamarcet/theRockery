@@ -60,7 +60,7 @@
 			endwhile;
 
 			//checking if is an easy recipie
-			$terms = get_the_terms( $post->ID, 'recetas_cat' );
+			$terms = get_the_terms( $post->ID, 'recetas_tag' );
 			if ( $terms && ! is_wp_error( $terms ) ) : 
 				foreach ( $terms as $term ) {
 					if( $term->name == "fácil") {
@@ -131,9 +131,9 @@
 		// check if there is a vertical image added and display it
 		$verticalImage = get_field('imagenVertical');
 		if( !empty($verticalImage) ): ?>
-		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php echo $verticalImage['url']; ?>&media=<?php echo $verticalImage['url']; ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?> - www.therockery.es" class="share-on-pinterest" target="_blank">
+		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php echo the_permalink(); ?>&media=<?php echo $verticalImage['url']; ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?> - www.therockery.es" class="share-on-pinterest" target="_blank">
 		<?php else: ?>
-		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php the_permalink(); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'full' ) ); ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?> - www.therockery.es" class="share-on-pinterest" target="_blank">
+		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php echo the_permalink(); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'full' ) ); ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?> - www.therockery.es" class="share-on-pinterest" target="_blank">
 		<?php endif; ?>
 		envíala a Pinterest </a>
 	</div>
@@ -171,7 +171,7 @@ if($terms) : ?>
 		<!-- a href="#comments" class=""><?php comments_number(); ?></a -->
 		<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>" class="share-on-facebook" target="_blank">Facebook</a>
 		<a href="https://plus.google.com/share?url=<?php the_permalink() ?>" class="share-on-google" target="_blank"> Google+ </a>
-		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php the_permalink(); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'full' ) ); ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?>" class="share-on-pinterest" target="_blank"> Pinterest </a>
+		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php echo the_permalink(); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'full' ) ); ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?>" class="share-on-pinterest" target="_blank"> Pinterest </a>
 	</section>
 	<section class="article__part grid-1-3 related">
 		<h2 class="section__title">Para seguir creando</h2>

@@ -1,23 +1,5 @@
-.sticker {
-	// background-color: #6B6BD0;
-	background-color: darken(adjust_hue(#FF6C12, 176), 9);
-	border: 1px solid #B9B8B8;
-	border-top: 0;
-
-	display: inline-block;
-	color: white;
-	padding: 20px;
-	border-radius: 0 0 50% 50%;
-	margin: 0;
-	position: absolute;
-	top: 0;
-	left: 26px;
-
-	text-transform: capitalize;
-
-	&:hover {
-		border-color: white;
-	}
+.wp-caption-text {
+	display: none;
 }
 
 .social__links {
@@ -66,7 +48,6 @@
 // This class is added with site.js:96
 .js-imageInContent {
 	display: table;
-	margin-top: $baseline;
 }
 //
 .hidden {

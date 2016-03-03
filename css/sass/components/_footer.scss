@@ -34,10 +34,8 @@ footer {
 .footer__ribbon {
 position: relative;
 	display: block;
-	font-style: 40px;
+
 	color: #A2A2A2;
-	margin-left: -#{$baseline/2};
-	margin-right: -#{$baseline/2};
 	margin-top: 0;
 	
 	&:before {

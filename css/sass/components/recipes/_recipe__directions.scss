@@ -1,2 +1,12 @@
 // Imagesd for PASO A PASO inside directions. 
 // Displaying them into the grid.
+.recipe__directions {
+	li div {
+		width: 100% !important;
+	}	
+
+	img {
+		display: block;
+		margin-top: $baseline;
+	}
+}

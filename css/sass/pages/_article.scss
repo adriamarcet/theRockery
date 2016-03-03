@@ -57,12 +57,15 @@
 	.article__header {
 		@include cf;
 	position: relative;
+		padding-bottom: 1px;
 		padding-bottom: $baseline*2;
 
 		.title,
 		.subtitle {
-			width: 1/2*100%;
+			width: 1/2*100%;			
+			/*
 			float: left;
+			*/
 		}
 
 		.subtitle p {
@@ -72,12 +75,13 @@
 
 		.creation {
 	position: absolute;
-			bottom: 0;
+	bottom: 1px;
 			width: 2/4*100%;
 			
 			padding: 0;
 			margin: 0;
-
+			border-top: 1px solid white;
+			
 			height: $baseline*2;
 			line-height: (26/16)*2;
 			background-color: desaturate(lighten(#FF6C12, 42), 67);

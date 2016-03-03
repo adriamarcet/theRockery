@@ -1,57 +1,167 @@
+/*
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+	  opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+*/
+
+
 .slider {
-position: relative;
-
-	.slider__mainImg{
-		display: block;
-		height: $baseline*12;
-		width: 100%;
-		background-size: cover;
-		background-position: 48%;
-		
-		img {
-position: absolute;
-			top: 1px;
-			left: 0px;
-			right: 0px;
-			height: $baseline*8;
-			opacity: 0;
-		}
-	}
-
+	overflow: hidden;
+	
 	img {
+		// making images inside slider responsive
+		max-width: 100%;
+		height: auto;
+		// necessary since they have another previous element, the input
+		margin-top: 0;
+		// triggered by the input check state
 		display: none;
 	}
+	
+	input {
+		// hidding the input
+		display: none;
+	}
+
+	input:checked + img {
+		// show the image when the input is checked
+		// add the image to baseline grid
+		display: block;
+	}
+	
+
+	// this is to have next and prev buttons (not implemented yet)
+	input:checked + .slide-container .nav label { 
+		display: block;
+	}
+	
+	&__extra-images {
+
+		@include cf;
+		clear: both;
+		margin: 0;
+		padding-top: 1px;
+		padding-left: 1px;
+		background-color: desaturate(lighten(#FF6C12, 42), 67);
+		display: none;
+
+		&--thumb {
+			float: left;
+			display: block;
+			margin: 0;
+			
+			// this will be changed with JS 
+			//depending on the number of images displayed
+			width: 50%; 
+
+			img {
+				// add the image to baseline grid
+				display: block;
+			}
+
+			&:last-child .slider__extra-images--thumbnail {
+				margin-right: 0;
+			}
+		}
+
+		&--thumbnail {
+			margin-right: 1px;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}	
 }
 
 @media screen and (min-width: $tablet) {
+
 	.slider {
 		width: 1/2*100%;
 		float: right;
-	}
+		
+		&__extra-images {
+		position: absolute;
+		bottom: 1px;
 
-	.slider__extraImg {
-		@include cf;
-	
-		margin-top: 0;
-		overflow: hidden;
-		z-index: 1;
-
-		border-top: 1px solid white;
-		height: ($baseline*2)-1;
-		margin-bottom: -($baseline*2)+1;
-		background-color: desaturate(lighten(#FF6C12, 42), 67);
-
-		img {
-			width: 1/4*100%;
-			height: auto;
-			margin: 0;
 			display: block;
-			float: left;
-		}
-
-		li {
-			margin-top: 0;
-			cursor: pointer;
+			overflow: hidden;
+			height: ($baseline*2);
+			padding-left: 0;
 		}
 	}
 }
