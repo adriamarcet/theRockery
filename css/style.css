@@ -7,8 +7,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
-@import url(http://fonts.googleapis.com/css?family=Noticia+Text:400,700);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -625,9 +623,19 @@ input:checked + .slide-container .nav label { display: block; }
       overflow: hidden;
       height: 52px;
       padding-left: 0; } }
-.switcher a {
-  color: #1c1a19;
+.site__description * {
   font-family: 'Arvo', Helvetica, sans-serif; }
+.site__description a {
+  font-family: 'Arvo', Helvetica, sans-serif;
+  color: #1c1a19; }
+
+.switcher a {
+  font-family: 'Arvo', Helvetica, sans-serif;
+  color: #1c1a19; }
+  .switcher a.selected {
+    color: #1c1a19; }
+  .switcher a:not(.selected) {
+    color: #f86105; }
 
 .selected {
   border-bottom: 5px solid #ffbe97;

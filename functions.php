@@ -44,7 +44,7 @@
 	
 	======================================================================================================================== */
 
-	add_action( 'wp_enqueue_scripts', 'starkers_script_enqueuer' );
+	// add_action( 'wp_enqueue_scripts', 'starkers_script_enqueuer' );
 
 	add_filter( 'body_class', array( 'Starkers_Utilities', 'add_slug_to_body_class' ) );
 
@@ -355,15 +355,91 @@
 	 * @author Keir Whitaker
 	 */
 
+	/* Including javascript to the site */
+	//jQuery Insert From Google
+	/*
+	if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+	function my_jquery_enqueue() {
+		wp_deregister_script('jquery');
+		wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", true, null);
+		wp_enqueue_script('jquery');
+	}
+
 	function starkers_script_enqueuer() {
-		wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery' ) );
+		wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery' ), 1, true );
 		wp_enqueue_script( 'site' );
 		wp_enqueue_style( 'screen' );
-
-		wp_register_script( 'unslider', get_template_directory_uri().'/js/unslider.js', array( 'jquery' ) );
-		wp_enqueue_script( 'unslider' );
-		wp_enqueue_style( 'screen' );
 	}
+
+	if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+	function my_jquery_enqueue() {
+	   wp_deregister_script('jquery');
+	   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", false, null);
+	   wp_enqueue_script('jquery');
+	}
+	*/
+
+	function include_my_scripts_to_template()
+	{
+		// Deregister the included library
+		wp_deregister_script( 'jquery' );
+
+		// Register the library again from Google's CDN
+		wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', array(), null, true );
+
+		// Register the script like this for a plugin: @http://goo.gl/PA1Jaq
+		//wp_register_script( 'custom-script', plugins_url( '/js/custom-script.js', __FILE__ ), array( 'jquery', 'jquery-ui-core' ), '20120208', true );
+
+		// Register the script like this for a theme:
+		wp_register_script( 'site-scripts', get_template_directory_uri() . '/js/site.js', array( 'jquery'), '10032016', true );
+
+		// For either a plugin or a theme, you can then enqueue the script:
+		wp_enqueue_script( 'site-scripts' );
+	}
+	add_action( 'wp_enqueue_scripts', 'include_my_scripts_to_template' );
+
+
+	/* ========================================================================================================================
+	
+	Styles
+	
+	======================================================================================================================== */
+	
+
+
+	// load css into the website's front-end @my-stylesheet--screen
+	function load_my_styles_in_frontend() {
+
+		// Register and enqueue the stylesheet for SCREEN
+		//	wp_register_style( $handle, $src, $deps, $ver, $media );
+		wp_register_style(
+			'my-stylesheet--screen', // handle name
+			get_template_directory_uri() . '/css/style.css', // the URL of the stylesheet
+			// array( 'bootstrap-main' ), // an array of dependent styles
+			array(),
+			'10032016', // version number
+			'screen' // CSS media type
+		);
+		// if we registered the style before:
+		wp_enqueue_style( 'my-stylesheet--screen' );
+
+
+		// Register and enqueue the stylesheet for PRINT
+		//	wp_register_style( $handle, $src, $deps, $ver, $media );
+		wp_register_style(
+			'my-stylesheet--print', // handle name
+			get_template_directory_uri() . '/css/print.css', // the URL of the stylesheet
+			// array( 'bootstrap-main' ), // an array of dependent styles
+			array(),
+			'10032016', // version number
+			'print' // CSS media type
+		);
+
+		// if we registered the style before:
+		wp_enqueue_style( 'my-stylesheet--print' );
+	}
+	add_action( 'wp_enqueue_scripts', 'load_my_styles_in_frontend' );
+
 
 	/* ========================================================================================================================
 	

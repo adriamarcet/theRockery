@@ -78,9 +78,10 @@
 			<meta name="theme-color" content="#ffffff">
 
 		<?php wp_head(); ?>
-		
+	<!--	
 		<link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/css/style.css' type='text/css' media='screen' />
 		<link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/css/print.css' type='text/css' media='print' />
+	-->
 	</head>
 	
 	<body <?php body_class(); ?>>

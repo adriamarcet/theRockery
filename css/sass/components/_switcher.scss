@@ -1,7 +1,26 @@
+.site__description {
+	* {
+		font-family: 'Arvo', Helvetica, sans-serif;
+	}
+
+	a {
+		font-family: 'Arvo', Helvetica, sans-serif;
+		color: $textColor;	
+	}
+} 
+
 .switcher {
 	a {
-		color: $textColor;
-		font-family: 'Arvo', Helvetica, sans-serif;
+	font-family: 'Arvo', Helvetica, sans-serif;
+	color: $textColor;
+	
+		&.selected {
+			color: $textColor;
+		}
+
+		&:not(.selected) {
+			color: $link;
+		}
 	}
 }
 

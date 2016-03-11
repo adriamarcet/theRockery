@@ -33,14 +33,13 @@ jQuery(document).ready(function($) {
 			console.log("leave mobile");
 		}
 	});
-
+	
 	// Wrapping all 'nota n.' words
-
-	$("a[href^=#]").on("click", function(e) {
+	$("a[href^='#']").on("click", function(e) {
 	  e.preventDefault();
 	  history.pushState({}, "", this.href);
 	});
-
+	
 	// Looks and replaces Nota X
 	$(".article__recipe li:contains('Nota ')").html(function(_, html){
 		return html.replace(/(Nota \d)/g, '<a href="#$1"><span class="tagged">$1</span></a>');
