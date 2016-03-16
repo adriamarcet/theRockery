@@ -63,7 +63,7 @@ a {
 }
 
 @media screen and (min-width: $desktop) {
-	
+	.limit-center,
 	.page-wrap {
 		width: 94%;
 		margin: 0 auto;
@@ -72,8 +72,9 @@ a {
 }
 
 @media screen and (min-width: $afterDesktop) {
+	.limit-center,
 	.page-wrap {
 		@include cf;
-		width: 60em; // 960 / 16
+		max-width: 87.5em; // 1400 / 16
 	}
 }

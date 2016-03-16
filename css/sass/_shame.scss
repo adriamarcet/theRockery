@@ -1,3 +1,12 @@
+p.lastSentence {
+
+	padding:$baseline;
+	padding-top: 0;
+	text-align: left;
+	display: block;
+	font-size: 14px;
+}
+
 .wp-caption-text {
 	display: none;
 }
@@ -192,12 +201,13 @@ position: absolute;
 	}
 }
 
-
-
-
-
 // Any tooltip tag requires the title attr on it
 @media screen and (min-width: $desktop) {
+	
+	p.lastSentence {
+		padding: $baseline 15%;
+		text-align: center;
+	}
 
 	.tooltip {
 	position: relative;

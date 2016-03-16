@@ -1,7 +1,21 @@
 jQuery(document).ready(function($) {
 	// Your JavaScript goes here
+	/*
+	var tempeCel =  /(\d+)/;
+	console.log(tempeCel);
 
-	// Get all parts of the progress bar.
+	var tempCel = $('.recipe__directions li:contains("ºC")');
+
+	tempCel.wrap( "<div class='new'></div>" );
+
+	// Looks and replaces Nota X
+	tempCel.html(function(_, html){
+		return html.replace(/(\d+)/, '<a href="#$1"><span class="tagged">$1</span></a>');
+		// return html.replace(/(Nota /[0-9]/ )/g, '<span class="tagged">$1</span>');
+	});
+	*/
+
+	// Get all thumbs in the slider
 	var sliderThumbs = $('.slider__extra-images--thumb');
 
 	// With each one, calculate the percentage and apply the width.
