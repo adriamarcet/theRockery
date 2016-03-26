@@ -1,0 +1,38 @@
+.recipe__details {
+	text-align: center;
+	
+	& > div {
+		//simulate borders with box-shadow to prevent the vertical rhtyhm to break with borders
+		-webkit-box-shadow: inset 0px -4px 0px -3px rgb(208, 202, 204);
+		-moz-box-shadow: inset 0px -4px 0px -3px rgb(208, 202, 204);
+		box-shadow: inset 0px -4px 0px -3px rgb(208, 202, 204);
+		
+		background: white;
+		display: inline-block;
+		
+		border-radius: 3px;
+		padding: 0 6px;
+		margin: 0 6px $baseline;
+	}
+
+	.easyToDo {
+		color: white;
+		background-color: #009ce3;
+	}
+}
+
+@media screen and (min-width: $tablet) {
+
+	.recipe__details {
+		float: right;
+		margin-bottom: 0;
+		
+		& > div {
+			display: block;
+			border-radius: 0;
+			text-align: left;
+			padding: 3px 0 3px 13px;
+			margin: 3px 0 0;
+		}
+	}
+}

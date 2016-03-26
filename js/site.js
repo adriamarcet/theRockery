@@ -1,6 +1,84 @@
+// Using smartresize instead of window resize function 
+// as it is explained in http://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
+(function($,sr){
+
+  // debouncing function from John Hann
+  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+  var debounce = function (func, threshold, execAsap) {
+      var timeout;
+
+      return function debounced () {
+          var obj = this, args = arguments;
+          function delayed () {
+              if (!execAsap)
+                  func.apply(obj, args);
+              timeout = null;
+          };
+
+          if (timeout)
+              clearTimeout(timeout);
+          else if (execAsap)
+              func.apply(obj, args);
+
+          timeout = setTimeout(delayed, threshold || 100);
+      };
+  }
+  // smartresize 
+  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+})(jQuery,'smartresize');
+
+
+
+// Using functin smartresize to adjust youtube embed videos size
+// By Chris Coyier & tweaked by Mathias Bynens https://css-tricks.com/fluid-width-youtube-videos/
+
+$(function() {
+
+	// Find all YouTube videos
+	var $allVideos = $("iframe[src^='https://www.youtube.com']"),
+
+	    // The element that is fluid width
+	    $fluidEl = $(".article__part.has-embed");
+
+	// Figure out and save aspect ratio for each video
+	$allVideos.each(function() {
+
+		$(this)
+			.data('aspectRatio', this.height / this.width)
+			
+			// and remove the hard coded width/height
+			.removeAttr('height')
+			.removeAttr('width');
+
+	});
+
+	// When the window is resized
+	// (You'll probably want to debounce this)
+	$(window).smartresize(function() {
+
+		var newWidth = $fluidEl.width();
+		
+		// Resize all videos according to their own aspect ratio
+		$allVideos.each(function() {
+
+			var $el = $(this);
+			$el
+				.width(newWidth)
+				.height(newWidth * $el.data('aspectRatio'));
+
+		});
+
+	// Kick off one resize to fix all videos on page load
+	}).resize();
+
+});
+
 jQuery(document).ready(function($) {
+	
+
+
 	// Your JavaScript goes here
-	/*
 	var tempeCel =  /(\d+)/;
 	console.log(tempeCel);
 
@@ -10,12 +88,40 @@ jQuery(document).ready(function($) {
 
 	// Looks and replaces Nota X
 	tempCel.html(function(_, html){
-		return html.replace(/(\d+)/, '<a href="#$1"><span class="tagged">$1</span></a>');
+		return html.replace(/(\d+)/, '<a href="#$1"><span class="celcius">$1</span></a>');
 		// return html.replace(/(Nota /[0-9]/ )/g, '<span class="tagged">$1</span>');
 	});
-	*/
 
-	// Get all thumbs in the slider
+	$('.celcius').css('color','red');
+
+	var celNum = $('.celcius').html();
+	console.log(celNum);
+	function convertToF() {
+		parseFloat(celNum);
+		celNum = (celNum * (9 / 5)) + 32;
+		return celNum;
+	}
+
+
+	$('.section__title').on("click", function(){
+		
+		convertToF();
+		console.log(celNum);
+		$('.celcius').html(celNum);
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+	// Get all parts of the progress bar.
 	var sliderThumbs = $('.slider__extra-images--thumb');
 
 	// With each one, calculate the percentage and apply the width.

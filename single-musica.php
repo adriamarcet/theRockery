@@ -16,6 +16,7 @@
 		<h4 class="photografer">Fotos de <a href="#"><?php the_field('fotografo') ?></a></h4>
 		<?php endif; ?>
 	</header>
+	
 	<div class="group">
 
 		<section class="article__part cms_content grid-2-3">
