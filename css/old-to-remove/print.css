@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/**/
+body {
+  background-color: white;
+  font-size: 12pt;
+  margin: 0; }
+
+footer {
+  text-align: center;
+  font-size: 12pt;
+  border-bottom: 1px solid #ff7521; }
+
+h1 {
+  margin-bottom: 0; }
+
+h4,
+h2 {
+  font-size: 12pt; }
+
+.creation {
+  font-size: 12pt;
+  font-weight: normal; }
+
+.recipe__details,
+p {
+  line-height: 1.4; }
+
+.recipe__details > div:before {
+  content: '';
+  display: inline-block; }
+
+.page-wrap {
+  background-color: transparent;
+  width: auto;
+  border: 0;
+  margin: 0 5% 0 10%;
+  padding: 0;
+  border-top: 1px solid #ff7521;
+  float: none !important; }
+
+.site__head {
+  text-align: center;
+  padding: 10px 0;
+  display: table;
+  width: 100%;
+  vertical-align: baseline;
+  border-bottom: 1px solid gainsboro; }
+
+.logo {
+  color: #ff7521;
+  display: table-cell;
+  width: 50%;
+  text-align: right;
+  padding-right: 10px; }
+  .logo span {
+    display: inline-block;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    font-family: 'Arvo', Helvetica, sans-serif; }
+  .logo .the {
+    text-transform: lowercase;
+    font-style: 20pt;
+    padding-bottom: 10px;
+    display: inline-block; }
+  .logo .rockery {
+    text-transform: uppercase;
+    font-size: 29.5pt;
+    font-weight: bold; }
+
+.site__description {
+  font-family: 'Arvo', Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 10pt;
+  color: black;
+  display: table-cell;
+  margin: 0;
+  padding: 0 0 0 10px;
+  width: 50%;
+  text-align: left;
+  border-left: 1px solid gainsboro;
+  vertical-align: middle; }
+  .site__description a {
+    color: black;
+    text-decoration: none; }
+
+.slider {
+  width: 240px;
+  display: block;
+  float: right; }
+  .slider .slider__mainImg {
+    width: 100%;
+    height: auto;
+    background-image: none !important; }
+    .slider .slider__mainImg img {
+      width: 100%;
+      height: auto; }
+  .slider .slider__extraImg {
+    display: none; }
+
+.i-prepTime:before {
+  content: 'Tiempo de preparación ';
+  display: inline-block;
+  padding-right: 3px;
+  font-style: normal; }
+
+.i-ovenTime:before {
+  content: 'Tiempo de horneado ';
+  display: inline-block;
+  padding-right: 3px;
+  font-style: normal; }
+
+.directions li a {
+  display: none; }
+
+.recipe__directions a {
+  text-decoration: none;
+  color: gray;
+  text-transform: uppercase;
+  font-size: 12px; }
+
+.js-imageInContent,
+.social-share,
+.subtitle,
+.print,
+.related,
+.footer,
+.comments,
+.introduction,
+nav {
+  display: none; }
+
+/*# sourceMappingURL=print.css.map */

@@ -1,0 +1,86 @@
+.switcher__degrees {
+	@include cf;
+	
+	border: 1px solid gainsboro;
+	border-bottom: 0;
+	background-color: gainsboro;
+
+	input[type="radio"] {
+		display: none;
+	}
+
+	&--label {
+		transition: color .5s ease;
+		color: #868686;
+		margin: 0;
+
+		display: block;
+		float: left;
+		width: 50%;
+		
+		text-align: center;
+		cursor: pointer;
+
+		text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
+		
+		&:hover {
+			color: $baseColor;
+		}
+	}
+	
+	input:checked + &--label{
+
+		color: black;
+		background-color: white;
+		-webkit-box-shadow: inset 0px -4px 0px -3px rgb(208, 202, 204);
+		-moz-box-shadow: inset 0px -4px 0px -3px rgb(208, 202, 204);
+		box-shadow: inset 0px -4px 0px -3px rgb(208, 202, 204);
+	}
+}
+
+.js-temp {
+	transition: color .5s ease;
+
+	&--animated {
+		animation: 2s forwards blink-orange;
+	}
+}
+
+@keyframes blink-orange {
+
+	0% {
+		color: black;
+	}
+	
+	20% {
+		color: $baseColor;		
+	}
+
+	100% {
+		color: black;
+	}
+}
+
+.js-switcher__degrees {
+
+	color: blue;
+	cursor: pointer;
+}
+
+
+.recipe__directions--with-switcher {
+	@include cf;
+
+	.section__title {
+		// width: (4/5)*100%; // this is entered by JS
+		// float: left;
+	}
+
+	.switcher__degrees {
+		display: none; // JS will display it if necessary
+		width: (1/5)*100%;
+		float: left;
+		margin: 0;
+		margin-top: -1px;
+	}
+}
