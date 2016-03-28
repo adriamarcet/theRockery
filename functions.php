@@ -391,7 +391,7 @@
 		//wp_register_script( 'custom-script', plugins_url( '/js/custom-script.js', __FILE__ ), array( 'jquery', 'jquery-ui-core' ), '20120208', true );
 
 		// Register the script like this for a theme:
-		wp_register_script( 'site-scripts', get_template_directory_uri() . '/js/site.js', array( 'jquery'), '10032016', true );
+		wp_register_script( 'site-scripts', get_template_directory_uri() . '/js/scripts.min.js', array( 'jquery'), '10032016', true );
 
 		// For either a plugin or a theme, you can then enqueue the script:
 		wp_enqueue_script( 'site-scripts' );

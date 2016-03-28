@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+smodule.exports = function(grunt) {
 
 	grunt.config('sass', {
 
@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 		        style: 'expanded'
 		    },
 		    files: {
-		        '../css/styles.css': 'sass/project.scss'
+		        '../css/style.css': 'sass/project.scss'
 		    }
 		} 
 	});

@@ -108,7 +108,17 @@
 
 		<?php if( get_field('elaboracion') ): ?>
 		<section class="article__part recipe__directions grid-2-3">
-			<h2 class="section__title">Elaboración</h2>				
+
+			<div class="recipe__directions--with-switcher">
+				<h2 class="section__title">Elaboración</h2>
+				<div class="switcher__degrees">
+					<input type="radio" name="degrees" value="celsius" id="celsius" checked>
+					<label class="switcher__degrees--label" for="celsius">ºC</label>
+					<input type="radio" name="degrees" value="fahrenheits" id="fahrenheits">
+					<label class="switcher__degrees--label" for="fahrenheits">ºF</label>
+				</div>	
+			</div>
+			
 			<div itemprop="recipeInstructions"><?php the_field('elaboracion'); ?></div>
 		</section>
 		<?php endif; ?>
