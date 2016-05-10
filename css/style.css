@@ -1127,6 +1127,41 @@ ol li {
   display: inline-block;
 }
 
+.i--where {
+  background-image: url("../img/icons/i-where.png");
+}
+
+.article__details {
+  text-align: center;
+}
+.article__details > div {
+  -webkit-box-shadow: inset 0px -4px 0px -3px #d0cacc;
+  -moz-box-shadow: inset 0px -4px 0px -3px #d0cacc;
+  box-shadow: inset 0px -4px 0px -3px #d0cacc;
+  background: white;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0 6px;
+  margin: 0 6px 26px;
+}
+.article__details .easyToDo {
+  color: white;
+  background-color: #009ce3;
+}
+
+@media screen and (min-width: 40em) {
+  .article__details {
+    float: right;
+    margin-bottom: 0;
+  }
+  .article__details > div {
+    display: block;
+    border-radius: 0;
+    text-align: left;
+    padding: 3px 0 3px 13px;
+    margin: 3px 0 0;
+  }
+}
 .ingridients ul {
   border-radius: 4px 4px 0 0;
   background-color: #fff6ee;
@@ -1150,37 +1185,6 @@ ol li {
   }
   .ingridients li:hover {
     background-color: #FFF0E4;
-  }
-}
-.recipe__details {
-  text-align: center;
-}
-.recipe__details > div {
-  -webkit-box-shadow: inset 0px -4px 0px -3px #d0cacc;
-  -moz-box-shadow: inset 0px -4px 0px -3px #d0cacc;
-  box-shadow: inset 0px -4px 0px -3px #d0cacc;
-  background: white;
-  display: inline-block;
-  border-radius: 3px;
-  padding: 0 6px;
-  margin: 0 6px 26px;
-}
-.recipe__details .easyToDo {
-  color: white;
-  background-color: #009ce3;
-}
-
-@media screen and (min-width: 40em) {
-  .recipe__details {
-    float: right;
-    margin-bottom: 0;
-  }
-  .recipe__details > div {
-    display: block;
-    border-radius: 0;
-    text-align: left;
-    padding: 3px 0 3px 13px;
-    margin: 3px 0 0;
   }
 }
 .recipe__notes p + p {
@@ -1281,6 +1285,49 @@ input:checked + .switcher__degrees--label {
   float: left;
   margin: 0;
   margin-top: -1px;
+}
+
+.also-played {
+  text-align: left;
+  margin-top: 26px;
+}
+.also-played li {
+  display: block;
+  margin-top: 0;
+}
+.also-played--band {
+  position: relative;
+  padding: 0;
+  text-transform: uppercase;
+  margin-top: 0;
+  display: block;
+  text-align: center;
+}
+.also-played--band:after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  display: block;
+  background: gainsboro;
+  position: absolute;
+  left: 0;
+}
+.also-played--band:link:before {
+  transition: width .3s ease;
+  display: block;
+  content: "";
+  height: 1px;
+  display: block;
+  background: #FF6C12;
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  z-index: 1;
+}
+.also-played--band:link:hover:before {
+  width: 100%;
 }
 
 .article .introduction .hidden ~ p {

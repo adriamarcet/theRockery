@@ -20,12 +20,14 @@
 @import "components/footer.scss";
 @import "components/icons.scss";
 
+@import "components/_article__details.scss";
 
 @import "components/recipes/_recipe__ingridients";
-@import "components/recipes/_recipe__details";
 @import "components/recipes/_recipe__notes.scss";
 @import "components/recipes/_recipe__directions.scss";
 @import "components/recipes/_switcher__degrees.scss";
+
+@import "components/music/_also-played.scss";
 
 @import "pages/article.scss";
 @import "pages/_home.scss";

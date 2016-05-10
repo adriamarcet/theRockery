@@ -19,7 +19,7 @@
 		<?php 
 		// check if the flexible content field has rows of data
 		if( have_rows('detalles_receta') ):
-		echo '<section class="recipe__details grid-1-3">'; ?>
+		echo '<section class="article__details grid-1-3">'; ?>
 		<h4 class="hidden">Detalles de la receta</h4>
 		<?php	
 			// loop through the rows of data

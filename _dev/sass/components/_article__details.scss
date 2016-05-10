@@ -1,4 +1,4 @@
-.recipe__details {
+.article__details {
 	text-align: center;
 	
 	& > div {
@@ -23,7 +23,7 @@
 
 @media screen and (min-width: $tablet) {
 
-	.recipe__details {
+	.article__details {
 		float: right;
 		margin-bottom: 0;
 		

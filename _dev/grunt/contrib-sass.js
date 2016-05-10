@@ -1,4 +1,4 @@
-smodule.exports = function(grunt) {
+module.exports = function(grunt) {
 
 	grunt.config('sass', {
 
