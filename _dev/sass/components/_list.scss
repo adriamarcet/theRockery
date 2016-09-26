@@ -4,6 +4,10 @@ ol {
 	}
 }
 
+.list {
+	padding-bottom: $baseline;
+}
+
 .list--row {
 	@include cf;
 	margin-top: 0;
@@ -31,7 +35,7 @@ ol {
 		@include cf;
 		margin-top: 0;
 		display: block;
-
+		
 		li {
 			width: 1/2*100%;
 			float: left;

@@ -13,8 +13,8 @@ module.exports = function(grunt) {
 		},
 
 		dist: {
-			src: '../css/styles.css',
-			dest: '../css/styles.css'
+			src: '../css/style.css',
+			dest: '../css/style.css'
 		}
 	});
     grunt.loadNpmTasks('grunt-postcss');

@@ -1,11 +1,14 @@
 .article {
 	.introduction {
 		.hidden ~ p {
-			margin-top: 0;
+			// margin-top: 0;
 		}
 	}
 }
 
+.hidden ~ *:first-of-type {
+	margin-top: 0;
+}
 // extending the style for the title generated with the CMS
 .article__music {
 	.cms_content {

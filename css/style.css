@@ -63,6 +63,45 @@ table {
 }
 
 /*-- FONTS --*/
+/* Font stack options FROM HTML5 BOILERPLATE
+	The following represents a list of font stacks, as recommended by Nathan Ford in
+	http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
+	I've added inverted commas around the relevant family names to ensure compatibility.
+	p = balanced for paragraphs or body copy
+	t = balanced for headlines or titles
+	- - - -
+Arial, "Helvetica Neue", Helvetica, sans-serif - p, t
+Baskerville, "Times New Roman", Times, serif - p
+Baskerville, "Times, Times New Roman", serif - t
+Cambria, Georgia, Times, "Times New Roman", serif - p, t
+"Century Gothic", "Apple Gothic", sans-serif - p, t
+Consolas, "Lucida Console", Monaco, monospace - p, t
+"Copperplate Light", "Copperplate Gothic Light", serif - p, t
+"Courier New", Courier, monospace - p, t
+"Franklin Gothic Medium", "Arial Narrow Bold", Arial, sans-serif - p, t
+Futura, "Century Gothic", "Apple Gothic", sans-serif - p, t
+Garamond, "Hoefler Text", "Times New Roman", Times, serif - p
+Garamond, "Hoefler Text", Palatino, "Palatino Linotype", serif - t
+Geneva, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif - p
+Geneva, Verdana, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif - t
+Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif - p
+Georgia, Times, "Times New Roman", serif - t
+GillSans, Calibri, Trebuchet, sans-serif - p
+GillSans, Trebuchet, Calibri, sans-serif - t
+"Helvetica Neue", Arial, Helvetica, sans-serif - p
+Helvetica, "Helvetica Neue", Arial, sans-serif - t
+Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif - p, t
+"Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif - p, t
+Palatino, "Palatino Linotype", Georgia, Times, "Times New Roman", serif - p
+Palatino, "Palatino Linotype", "Hoefler Text", Times, "Times New Roman", serif - t
+Tahoma, Geneva, Verdana - p
+Tahoma, Verdana, Geneva - t
+Times, "Times New Roman", Georgia, serif - p, t
+Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif - p
+Trebuchet, Tahoma, Arial, sans-serif - t
+Verdana, Geneva, Tahoma, sans-serif - p
+Verdana, Tahoma, Geneva, sans-serif - t
+*/
 /*-- BASELINE -- */
 html {
   font-size: 100%;
@@ -73,13 +112,9 @@ html {
 body * + * {
   margin: 26px 0 0 0;
 }
-body p + p {
-  text-indent: 2em;
-  margin-top: 0;
-}
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noticia Text', Georgia, sans-serif;
+  font-family: "Lucida Bright", Georgia, serif;
 }
 
 .title {
@@ -128,13 +163,12 @@ h4,
 
 p {
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
 }
 
 p, ul, ol, li, a, span, blockquote, label, cite {
-  font-family: 'Noticia Text', Georgia, serif;
+  font-family: "Lucida Bright", Georgia, serif;
 }
 
 ol {
@@ -143,7 +177,6 @@ ol {
 }
 ol > li {
   position: relative;
-  border-bottom: 1px solid #aeaeae;
   padding-bottom: 25px;
   padding-left: 26px;
 }
@@ -195,15 +228,14 @@ sub {
 }
 
 @media screen and (min-width: 35em) {
+  html {
+    font-size: 112.5%;
+  }
+
   .title {
     font-size: 26px;
     font-size: 1.625rem;
     line-height: 1;
-  }
-
-  p {
-    font-size: 18px;
-    line-height: calc(26/18);
   }
 
   .section__title, .article__music .cms_content {
@@ -252,6 +284,7 @@ sub {
 @media screen and (min-width: 640px) {
   .group {
     margin-top: 0;
+    padding-left: 36px;
   }
   .group:before, .group:after {
     content: " ";
@@ -264,11 +297,16 @@ sub {
     *zoom: 1;
   }
   .group > * {
-    margin-top: 26px;
+    margin-top: 36px;
   }
 
   [class*='grid-'] {
     float: left;
+    padding-right: 36px;
+  }
+
+  .grid-1 {
+    width: 100%;
   }
 
   .grid-1-2 {
@@ -297,8 +335,6 @@ body {
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -423,8 +459,6 @@ label ~ * {
 }
 
 .btn {
-  -webkit-box-shadow: inset 0px 0px 0px 1px;
-  -moz-box-shadow: inset 0px 0px 0px 1px;
   box-shadow: inset 0px 0px 0px 1px;
   display: inline-block;
   cursor: pointer;
@@ -459,7 +493,6 @@ label ~ * {
   display: block;
   line-height: 1;
   -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
   text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
 }
@@ -898,6 +931,10 @@ ol li {
   text-align: left;
 }
 
+.list {
+  padding-bottom: 26px;
+}
+
 .list--row {
   margin-top: 0;
 }
@@ -981,8 +1018,6 @@ ol li {
 
 .comment__missaticum {
   margin-top: 0;
-  -webkit-box-shadow: 0px 5px 0px -1px gainsboro;
-  -moz-box-shadow: 0px 5px 0px -1px gainsboro;
   box-shadow: 0px 5px 0px -1px gainsboro;
   clear: both;
 }
@@ -1135,8 +1170,6 @@ ol li {
   text-align: center;
 }
 .article__details > div {
-  -webkit-box-shadow: inset 0px -4px 0px -3px #d0cacc;
-  -moz-box-shadow: inset 0px -4px 0px -3px #d0cacc;
   box-shadow: inset 0px -4px 0px -3px #d0cacc;
   background: white;
   display: inline-block;
@@ -1167,8 +1200,6 @@ ol li {
   background-color: #fff6ee;
 }
 .ingridients li {
-  -webkit-box-shadow: inset 0px -4px 0px -3px #d0cacc;
-  -moz-box-shadow: inset 0px -4px 0px -3px #d0cacc;
   box-shadow: inset 0px -4px 0px -3px #d0cacc;
   color: #666666;
   padding: 13px 26px 13px;
@@ -1241,8 +1272,6 @@ ol li {
 input:checked + .switcher__degrees--label {
   color: black;
   background-color: white;
-  -webkit-box-shadow: inset 0px -4px 0px -3px #d0cacc;
-  -moz-box-shadow: inset 0px -4px 0px -3px #d0cacc;
   box-shadow: inset 0px -4px 0px -3px #d0cacc;
 }
 
@@ -1250,7 +1279,20 @@ input:checked + .switcher__degrees--label {
   transition: color .5s ease;
 }
 .js-temp--animated {
-  animation: 2s forwards blink-orange;
+  -webkit-animation: 2s forwards blink-orange;
+          animation: 2s forwards blink-orange;
+}
+
+@-webkit-keyframes blink-orange {
+  0% {
+    color: black;
+  }
+  20% {
+    color: #FF6C12;
+  }
+  100% {
+    color: black;
+  }
 }
 
 @keyframes blink-orange {
@@ -1322,7 +1364,8 @@ input:checked + .switcher__degrees--label {
   position: absolute;
   bottom: -1px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 0;
   z-index: 1;
 }
@@ -1330,7 +1373,7 @@ input:checked + .switcher__degrees--label {
   width: 100%;
 }
 
-.article .introduction .hidden ~ p {
+.hidden ~ *:first-of-type {
   margin-top: 0;
 }
 
@@ -1468,8 +1511,6 @@ p.lastSentence {
   float: left;
 }
 .social__links a:hover {
-  -webkit-box-shadow: inset 0px 0px 0px 3px white;
-  -moz-box-shadow: inset 0px 0px 0px 3px white;
   box-shadow: inset 0px 0px 0px 3px white;
 }
 .social__links .social__links--facebook {
@@ -1552,7 +1593,6 @@ iframe {
   display: inline-block;
   left: 50%;
   -webkit-transform: translate(-50%, -50%) skew(-20deg);
-  -ms-transform: translate(-50%, -50%) skew(-20deg);
   /* IE 9 */
   transform: translate(-50%, -50%) skew(-20deg);
   top: 0;
@@ -1569,8 +1609,6 @@ iframe {
 
 .related__card {
   cursor: pointer;
-  -webkit-box-shadow: 0px 2px 0px -1px gainsboro;
-  -moz-box-shadow: 0px 2px 0px -1px gainsboro;
   box-shadow: 0px 2px 0px -1px gainsboro;
 }
 .related__card p {
@@ -1611,7 +1649,6 @@ iframe {
     bottom: 100%;
     left: 100%;
     -webkit-transform: translate(-2%, 28%);
-    -ms-transform: translate(-2%, 28%);
     transform: translate(-2%, 28%);
     content: attr(title);
     color: gray;

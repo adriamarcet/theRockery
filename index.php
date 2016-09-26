@@ -24,7 +24,11 @@
 	)); ?>
 
 	<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/list__food' ) ); ?>
-	<a href="<?php echo get_post_type_archive_link( 'recetas' ); ?>" class="btn btn__primary">Más recetas</a>
+	<div class="group">
+		<div class="grid-1">
+			<a href="<?php echo get_post_type_archive_link( 'recetas' ); ?>" class="btn btn__primary">Más recetas</a>		
+		</div>
+	</div>
 </section>
 
 <section class="section section__music">
@@ -37,6 +41,11 @@
 		'showposts' => '6'
 	)); ?>
 	<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/list__music' ) ); ?>
-	<a href="<?php echo get_post_type_archive_link( 'musica' ); ?>" class="btn btn__primary">Más música</a>
+	<div class="group">
+		<div class="grid-1">
+			<a href="<?php echo get_post_type_archive_link( 'musica' ); ?>" class="btn btn__primary">Más música</a>
+		</div>
+	</div>
+
 </section>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer') ); ?>

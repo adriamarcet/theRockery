@@ -10,7 +10,7 @@ $img_srcset = wp_get_attachment_image_srcset( get_post_thumbnail_id( $post_id ),
 	<img
 		src="<?php echo esc_url( $img_src ); ?>"
 		srcset="<?php echo esc_attr( $img_srcset ); ?>"
-		sizes="(max-width:480px) 480px, (max-width: 640px) 640px, 495px" 
+		sizes="(max-width:480px) 480px, (max-width: 640px) 640px, 540px" 
 		alt="<?php echo $thumbs['alt'] ?>" 
 		title="<?php echo $thumbs['title'] ?>"
 	>
@@ -28,7 +28,7 @@ $img_srcset = wp_get_attachment_image_srcset( get_post_thumbnail_id( $post_id ),
 	<img
 		src="<?php echo esc_url( $img_src ); ?>"
 		srcset="<?php echo esc_attr( $slides_srcset ); ?>"
-		sizes="(max-width:480px) 480px, (max-width: 640px) 640px, 495px" 
+		sizes="(max-width:480px) 480px, (max-width: 640px) 640px, 540px" 
 		alt="<?php echo $thumbs['alt'] ?>" 
 		title="<?php echo $thumbs['title'] ?>"
 	>
