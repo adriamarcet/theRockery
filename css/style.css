@@ -1461,7 +1461,7 @@ input:checked + .switcher__degrees--label {
     padding-right: 0;
   }
 }
-@media screen and (min-width: 66.875em) {
+@media screen and (min-width: 1335px) {
   .home .page-wrap {
     width: 85%;
     max-width: 85%;
