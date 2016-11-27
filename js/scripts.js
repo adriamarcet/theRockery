@@ -34,17 +34,18 @@ $(document).ready( function(){
 })(jQuery,'smartresize');
 
 // By Chris Coyier & tweaked by Mathias Bynens https://css-tricks.com/fluid-width-youtube-videos/
-
 $(function() {
 
 	// Find all YouTube videos
 	var $allVideos = $("iframe[src^='https://www.youtube.com']"),
+	// all videos inside .has-embed sections
+		$sectionVideos = $(".article__part.has-embed iframe[src^='https://www.youtube.com']"),
 
 		// The element that is fluid width
 		$fluidEl = $(".article__part.has-embed");
 
 	// Figure out and save aspect ratio for each video
-	$allVideos.each(function() {
+	$sectionVideos.each(function() {
 
 		$(this)
 			.data('aspectRatio', this.height / this.width)
@@ -62,7 +63,7 @@ $(function() {
 		var newWidth = $fluidEl.width();
 		
 		// Resize all videos according to their own aspect ratio
-		$allVideos.each(function() {
+		$sectionVideos.each(function() {
 
 			var $el = $(this);
 			$el
@@ -70,10 +71,8 @@ $(function() {
 				.height(newWidth * $el.data('aspectRatio'));
 
 		});
-
 	// Kick off one resize to fix all videos on page load
 	}).resize();
-
 });
 /**
  * A function to overlay a dynamically created baseline grid
@@ -491,6 +490,9 @@ jQuery(document).ready(function($) {
 	refer to *B
 
 	4 last point number 4 should be better triggered by the server
+
+	5 The state of the selected degree should be stored in a cookie 
+	// in case the user refresh the page it will keep that data saved
 */
 
 function switchDegrees(){

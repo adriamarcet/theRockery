@@ -6,6 +6,7 @@
 @import "typography.scss";
 @import "layout.scss";
 @import "globals.scss";
+@import "helpers.scss";
 
 //Modules or components
 @import "components/inputs.scss";
@@ -20,6 +21,8 @@
 @import "components/footer.scss";
 @import "components/icons.scss";
 
+@import "components/title-bar.scss";
+
 @import "components/_article__details.scss";
 
 @import "components/recipes/_recipe__ingridients";
@@ -32,4 +35,4 @@
 @import "pages/article.scss";
 @import "pages/_home.scss";
 
-@import "shame.scss";
+@import "shame.scss"; 

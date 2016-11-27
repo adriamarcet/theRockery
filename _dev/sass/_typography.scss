@@ -64,7 +64,6 @@ body {
 	}
 
 	p + p {
-
 		// text-indent: 2em;
 		// margin-top: 0;
 	}
@@ -101,18 +100,6 @@ h4,
 	font-size: 12px;
 	font-size: #{(12/16)}rem;
 	line-height: ($baseline/12px);
-}
-
-.title__category {
-	background: white;
-	padding: $baseline;
-	margin: 0 $baseline/2 0;
-	border-radius: 3px 3px 0 0;
-	border-bottom: 1px solid transparent;
-
-	& + * {
-		margin-top: 0;
-	}
 }
 
 p {
@@ -219,23 +206,4 @@ sub {
 		line-height: ($baseline/14px);
 	}
 
-}
-
-@media screen and (min-width: $tablet) {
-	.title__category {
-
-		padding: $baseline $baseline*6;
-	}
-}
-
-@media screen and (min-width: $desktop) {
-
-	.title__category {
-
-		padding: $baseline $baseline*8;
-
-		p {
-			padding: 0 $baseline;
-		}
-	}
 }

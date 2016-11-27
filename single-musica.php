@@ -53,7 +53,7 @@
 			<?php endif; ?>
 		</section>
 	
-		<section class="article__part cms_content grid-2-3">
+		<section class="article__part introduction cms_content grid-2-3">
 			<?php the_field('descripcion'); ?>
 		</section>
 		

@@ -508,3 +508,73 @@
 	function posts_link_attributes() {
 	    return 'class="btn btn-primary"';
 	}
+
+	/**
+	* Get taxonomies terms links.
+	* reference: https://developer.wordpress.org/reference/functions/get_the_terms/
+	*
+	* @see get_object_taxonomies()
+	*/
+	function wpdocs_custom_taxonomies_terms_links() {
+		// Get post by post ID.
+		$post = get_post( $post->ID );
+
+		// Get post type by post.
+		$post_type = $post->post_type;
+
+		// Get post type taxonomies.
+		$allTaxonomies = get_object_taxonomies( $post_type, 'objects' );
+		$taxonomies = $allTaxonomies[0];
+
+
+		$out = array();
+
+		foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+
+			// Get the terms related to post.
+			$terms = get_the_terms( $post->ID, $taxonomy_slug );
+
+				if ( ! empty( $terms ) ) {
+					// $out[] = "<h2>" . $taxonomy->label . "</h2>\n<ul>";
+					$out[] = "<ul class='menu'>";
+ 				foreach ( $terms as $term ) {
+					$out[] = sprintf( '<li><a href="%1$s">%2$s</a></li>',
+					esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
+					esc_html( $term->name )
+				);
+			}
+			
+			$out[] = "\n</ul>\n";
+		}
+		}
+		return implode( '', $out );
+	}
+
+
+	// Displaying only subcategories from the matched taxonomy
+	// reference @https://goo.gl/Zn8JL2
+	function wt_get_child_terms( $post_id, $taxonomy = '', $args = array() ) {
+
+		$object_terms = wp_get_object_terms( $post_id, $taxonomy, $args );
+		$res = '';
+
+		if ( ! empty( $object_terms ) ) {
+
+			// $res .= '<ul class="menu menu__subcategories h-list-row">';
+
+			foreach ( $object_terms as $term ) {
+
+				if ( !( $term->parent === 0 ) ) {
+
+					$termLink = get_term_link( $term );
+					$res .= '<li><a href="'. $termLink .'" class="menu__subcategories--item">';
+					$res .=  $term->name . '';
+					$res .= '</a></li>';
+				}
+			}
+				// $res .= '</ul>';
+
+		}
+
+		return apply_filters( 'wt_get_child_terms', rtrim( $res, ', ' ) );
+	}

@@ -1,0 +1,9 @@
+.h,
+%h {
+	&-list-row {
+		// Displaying any child as an inline block element
+		& > * {
+			display: inline-block;
+		}
+	}
+}

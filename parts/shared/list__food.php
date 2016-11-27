@@ -1,7 +1,8 @@
 <?php
 if (have_posts()) : ?>
 	<ul class="list list__food">
-		<? /* Start the Loop */ while (have_posts()) : the_post();  ?>
+		<? /* Start the Loop */ 
+		while (have_posts()) : the_post();  ?>
 		<li>
 			<article>
 				<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/card' ) ); ?>

@@ -4,14 +4,15 @@ module.exports = function(grunt) {
 
 		// Sass configuration
 		dist: {
-		    options: {
-		        // style: 'compressed'
-		        style: 'expanded'
-		    },
-		    files: {
-		        '../css/style.css': 'sass/project.scss'
-		    }
+			options: {
+					precision: 15,
+					style: 'expanded', // can be nested, compact, compressed, expanded.
+				},
+			files: {
+				'../css/style.css': 'sass/project.scss'
+			}
 		} 
 	});
-    grunt.loadNpmTasks('grunt-contrib-sass');
+
+	grunt.loadNpmTasks('grunt-contrib-sass');
 };

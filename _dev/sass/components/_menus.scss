@@ -5,6 +5,15 @@
 
 .menu {
 	
+	ul {
+		@include cf;
+	}
+
+	& > *,
+	& + * {
+		margin-top: 0;
+	}
+	
 	a {
 		color: black;
 	}
@@ -18,16 +27,21 @@
 		*/
 		color: $baseColor;
 		border-bottom: 3px solid $baseColor;
-		padding-bottom: ($baseline)-3;
+		padding-bottom: ($baseline/2)-3;
+	}
+	
+	.current-recetas_cat-ancestor .menu__option {
+		border-bottom: 3px solid $baseColor;
+		padding-bottom: ($baseline/2)-3;	
 	}
 
 	.menu__option {
-		padding-bottom: $baseline;
+		padding-bottom: $baseline/2;
 		display: block;
 
 		&:hover {
 			border-bottom: 3px solid $baseColor;
-			padding-bottom: ($baseline)-3;
+			padding-bottom: ($baseline/2)-3;
 		}
 	}
 
@@ -37,10 +51,8 @@
 }
 
 .menu__categories {
-
-	ul {
-		@include cf;
-	}
+	margin-top: ($baseline/2);
+	
 
 	li {
 		margin-top: 0;
@@ -49,9 +61,65 @@
 		float: left;
 	}
 
-	& + * {
-		margin-top: 0;
-	}	
+	.menu-food-menu {
+		
+		li {
+			width: 1/5*100%;
+		}
+	}
+}
+
+.menu__subcategories {
+	
+	@extend .h-list-row;
+	/* This padding is set so the component´s height is divisible by baseline (26) */ 
+	padding: 3px 6px 11px;
+	text-align: left;
+
+	&:empty{
+		// don´t display this element if is empty
+		// php shouldn´t be displaying it but is not yet accomplished
+		display: none;
+	}
+
+	.cat-item-none {
+		display: none;
+	}
+
+	.cat-item {
+		@extend .small;
+		display: inline-block;
+		background: #F4F4F4;
+		padding: 3px 10px;
+		border-radius: 3px;
+		margin-top: 3px;
+		margin-right: 6px;
+
+		box-shadow: inset 0px 0px 0px 1px #e8e8e8;
+		
+		&.current-cat {
+			// box-shadow: inset 0px 0px 0px 1px $baseColor;
+
+			a {
+				color: $baseColor;
+			}	
+		} 
+
+		
+
+		a {
+			color: inherit;
+
+			&:hover {
+				color: $baseColor;
+			}
+		}
+
+		&:hover {
+			box-shadow: inset 0px 0px 0px 1px $baseColor;
+			color: $baseColor;
+		}
+	}
 }
 
 .menu--combined {

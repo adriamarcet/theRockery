@@ -18,11 +18,13 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/music-menu' ) ); ?>
 
 <?php if ( have_posts() ): ?>
-	<h1 class="title__category">Aquí tienes toda la música ¡a disfrutar!</h1>
-	<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/list__music' ) ); ?>
+	<header class="title-bar">
+		<h1 class="title-bar__content">Aquí tienes toda la música ¡a disfrutar!</h1>
+	</header>
+		<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/list__music' ) ); ?>
 	<a href="<?php echo get_post_type_archive_link( 'recetas' ); ?>" class="btn btn__primary">Más recetas</a>
 <?php else: ?>
-<h2 class="title__category">Estamos preparando más contenido, ya queda menos.</h2>	
+<h2 class="title-bar__content">Estamos preparando más contenido, ya queda menos.</h2>	
 <?php endif; ?>
 
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>

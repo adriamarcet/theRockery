@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 		// Minify code from the scripts output
 		build: {
 			src: '../js/scripts.js',
-			dest: '../js/scripts.min.js'
+			dest: '../js/scripts.min.js',
 		}
 	});
 	

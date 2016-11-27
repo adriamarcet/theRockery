@@ -4,9 +4,7 @@
 'parts/shared/food-menu' ) 
 ); ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	
-
-<!--?php echo get_the_term_list( $post->ID, 'recetas_categoria', 'categoria: ', ', ', '' ); ? --> 
+		
 <article class="article article__recipe" itemscope itemtype="http://schema.org/Recipe">
 
 	<header class="article__header">
@@ -82,7 +80,7 @@
 
 		<?php // check if the repeater field has rows of data 
 		if( have_rows('grupo_de_ingredientes') ): ?>
-			<section class="section article__part ingridients grid-1-3">
+			<section class="section article__part ingridients grid-1-3 article__part--aside">
 
 			<?php // loop through the rows of data
 			while ( have_rows('grupo_de_ingredientes') ) : the_row(); ?>
@@ -132,7 +130,6 @@
 
 	</div>
 </article><!-- closing the main article -->
-
 <div class="advice print">
 	<div>
 		<a href="whatsapp://send?text= Comparto esta receta contigo a través de The Rockery: <?php the_permalink(); ?>" data-action="share/whatsapp/share" class="hide-med hide-large">Compártela por Whatsapp</a>
@@ -146,6 +143,25 @@
 		<a href="https://www.pinterest.com/pin/create%2Fbutton/?url=<?php echo the_permalink(); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'full' ) ); ?>&description=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?> - <?php echo htmlspecialchars(urlencode(html_entity_decode( $sbtl, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?> - www.therockery.es" class="share-on-pinterest" target="_blank">
 		<?php endif; ?>
 		envíala a Pinterest </a>
+	</div>
+</div>
+<div class="advice advice--group">
+	<div>
+	<?php 
+	if($prev_post) {
+	   $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title)); ?>
+	   <p><?php echo $cate ?></p>
+		<div class="grid-1-2">
+			<a rel="prev" href="<?php echo get_permalink($prev_post->ID) ?>" title="<?php $prev_title ?>">Ver la receta anterior <br><strong>&quot;<?php echo $prev_title ?>&quot;</strong></a>
+		</div>
+	<?php }
+	$next_post = get_next_post();
+	if($next_post) {
+	   $next_title = strip_tags(str_replace('"', '', $next_post->post_title)); ?>
+	   <div class="grid-1-2">
+			<a rel="prev" href="<?php echo get_permalink($next_post->ID) ?>" title="<?php $next_title ?>">Ver la receta siguiente <br><strong>&quot;<?php echo $next_title ?>&quot;</strong></a>
+	   </div>
+	<?php } ?>
 	</div>
 </div>
 

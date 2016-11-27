@@ -11,7 +11,7 @@
 }
 // extending the style for the title generated with the CMS
 .article__music {
-	.cms_content {
+	.cms_content h2 {
 		@extend .section__title;
 	}
 }
@@ -88,6 +88,14 @@
 			height: $baseline*2;
 			line-height: (26/16)*2;
 			background-color: desaturate(lighten(#FF6C12, 42), 67);
+		}
+	}
+
+	.article__part {
+
+		&--aside {
+			
+			float: right;
 		}
 	}
 }
