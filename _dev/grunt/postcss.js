@@ -1,21 +1,16 @@
 module.exports = function(grunt) {
+
 	grunt.config('postcss', {
-
-		// Autoprefix styles
 		options: {
-			map: true, // inline sourcemaps
-
 			processors: [
-				//require('pixrem')(), // add fallbacks for rem units
-				require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
-				//require('cssnano')() // minify the result
+			  require("postcss-cssnext")() // this includes autoprefixes
 			]
 		},
-
 		dist: {
 			src: '../css/style.css',
 			dest: '../css/style.css'
 		}
 	});
+
     grunt.loadNpmTasks('grunt-postcss');
 };

@@ -51,18 +51,19 @@
 }
 
 .menu__categories {
-	margin-top: ($baseline/2);
-	overflow: auto;
-	
+	// margin-top: ($baseline/2);
+	// overflow: auto;
+	display: flex;
+
 	[class^="menu-"] {
-		white-space: nowrap;
+		// white-space: nowrap;
 	}
 
 	li {
-		margin-top: 0;
-		width: auto;
-		display: inline-block;
-		padding: 0 $baseline/2;
+		// margin-top: 0;
+		// width: auto;
+		// display: inline-block;
+		// padding: 0 $baseline/2;
 	}
 }
 
