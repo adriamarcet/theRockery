@@ -210,7 +210,7 @@ a.sticker:hover:hover { border-color: white; }
 .slides { padding: 0; width: 609px; height: 420px; display: block; margin: 0 auto; position: relative;
 }
 
-.slides * { user-select: none; -ms-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+.slides * { user-select: none;
 }
 
 .slides input { display: none; }
@@ -289,9 +289,10 @@ padding-bottom: ($baseline)-3;
 .menu .current-recetas_cat-ancestor .menu__option { border-bottom: 3px solid #FF6C12; padding-bottom: 10px; }
 .menu .menu__option { padding-bottom: 13px; display: block; }
 .menu .menu__option:hover { border-bottom: 3px solid #FF6C12; padding-bottom: 10px; }
-.menu a { display: inline-block; }
 
-.menu__categories { display: -webkit-box; display: -ms-flexbox; display: flex; }
+.menu__categories { overflow: auto; }
+.menu__categories [class^="menu-"] { white-space: nowrap; }
+.menu__categories li { margin-top: 0; display: inline-block; padding: 0 13px; }
 
 .menu__subcategories { /* This padding is set so the component´s height is divisible by baseline (26) */ padding: 3px 6px 11px; text-align: left; }
 .menu__subcategories:empty { display: none; }
@@ -314,6 +315,8 @@ padding-bottom: ($baseline)-3;
   .menu--combined ul { *zoom: 1; }
   .menu--combined li { margin-top: 0; width: 25%; display: block; float: left; }
   .menu--combined + * { margin-top: 0; }
+  .menu__categories [class^="menu-"] { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  .menu__categories li { padding: 0; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
   .menu__categories + *:not(.list) { margin-top: 0; } }
 ol li { text-align: left; }
 
