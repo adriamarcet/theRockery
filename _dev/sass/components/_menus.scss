@@ -52,20 +52,17 @@
 
 .menu__categories {
 	margin-top: ($baseline/2);
+	overflow: auto;
 	
+	[class^="menu-"] {
+		white-space: nowrap;
+	}
 
 	li {
 		margin-top: 0;
-		width: 1/4*100%;
-		display: block;
-		float: left;
-	}
-
-	.menu-food-menu {
-		
-		li {
-			width: 1/5*100%;
-		}
+		width: auto;
+		display: inline-block;
+		padding: 0 $baseline/2;
 	}
 }
 
