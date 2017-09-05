@@ -1,0 +1,12 @@
+.site__head {
+
+	padding: 5px 5px 0;
+	border-bottom: 5px solid $baseColor;
+
+	& + * {
+		margin-top: $baseline/2;
+	}
+	* {
+		font-family: 'Arvo', Helvetica, sans-serif;
+	}
+}

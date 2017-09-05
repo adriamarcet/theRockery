@@ -168,11 +168,7 @@ label ~ * { margin-top: 0; }
 .btn__primary:hover { background-color: #f86105; color: white; }
 
 @media screen and (min-width: 54.375em) { .btn__primary { margin-left: 0; margin-right: 0; } }
-.site__head { padding: 5px 5px 0; border-bottom: 5px solid #FF6C12; }
-.site__head + * { margin-top: 13px; }
-.site__head * { font-family: 'Arvo', Helvetica, sans-serif; }
-
-.logo { text-transform: uppercase; text-align: left; display: block; line-height: 1; -webkit-background-clip: text; background-clip: text; text-shadow: rgba(255, 255, 255, .5) 0px 3px 3px; font-size: 40px; font-size: 2.5rem; color: #FF6C12; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+.logo { text-transform: uppercase; text-align: left; display: block; line-height: 1; -webkit-background-clip: text; background-clip: text; text-shadow: rgba(255, 255, 255, .5) 0px 3px 3px; font-size: 40px; font-size: 2.5rem; color: #FF6C12; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
 .logo * { margin: 0; }
 .logo span.the { font-size: 24px; font-size: 1.5rem; }
 .logo span.rockery { font-weight: bold; }
@@ -263,13 +259,6 @@ input:checked + .slide-container .nav label { display: block; }
 
 @media screen and (min-width: 40em) { .slider { width: 50%; float: right; }
   .slider__extra-images { position: absolute; bottom: 1px; display: block; overflow: hidden; height: 52px; padding-left: 0; } }
-.switcher a { font-family: 'Arvo', Helvetica, sans-serif; color: #1c1a19; }
-.switcher a.selected { color: #1c1a19; }
-.switcher a:not(.selected) { color: #f86105; }
-
-.selected { border-bottom: 5px solid #ffbe97; padding-bottom: 4px; position: relative; z-index: 100; }
-
-@media screen and (min-width: 35em) { .selected { padding-bottom: 4px; } }
 /*to be change to .site-menu in wp also*/
 #site-menu { display: none; }
 
