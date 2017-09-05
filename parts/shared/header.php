@@ -1,17 +1,6 @@
 <header class="site__head">
 	<h1><a href="<?php echo home_url(); ?>" class="logo"><span class="the">The </span><span class="rockery">Rockery</span></a></h1>
-	<h2 class="site__description <?php if( is_home() ){ echo 'switcher'; } ?>">
-		<?php
-			if( is_home() ) {
-				?>
-				<a href="#" class="selected foodSwitch">Recetas</a> a ritmo de <a href="#" class="switcher__music musicSwitch">Rock</a></h2>
-				<?php
-			}else{
-				?>
-				Recetas a ritmo de Rock</h2>
-				<?php
-			}
-		?>
+	<h2 class="site__description"><?php echo $site_description = get_bloginfo( 'description'); ?></h2>
 	<!-- 
 	<?php
 		$defaults = array(
