@@ -6,48 +6,45 @@
 	& + * {
 		margin-top: $baseline/2;
 	}
+	* {
+		font-family: 'Arvo', Helvetica, sans-serif;
+	}
 }
 
 .logo {
 
 	text-transform: uppercase;
 	text-align: left;
+	
 	display: block;
 	line-height: 1;
 
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
 	background-clip: text;
+	
 	text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+	font-size: 2.5rem;
+	color: $baseColor;
 	
-	span {
-		color: $baseColor;
-		display: block;
-		line-height: 1;
-	}
-	
-	.the {
-		font-size: 38px;
-		// font-size: #{38/16}rem;
-		line-height: 0.8;
-		font-family: 'Arvo', Helvetica, sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	* {
+		margin: 0;
 	}
 
-	.rockery {
-		font-size: 51px;
-		//font-size: #{58/16}rem;
-		font-family: 'Arvo', Helvetica, sans-serif;
+	span.the {
+		font-size: 1.5rem;
+	}
+	span.rockery {
 		font-weight: bold;
-		margin: 0;
 	}
 }
 
 .site__description {
-
-	font-size: 20px;
-	// font-size: #{20/16}rem;
-
-	font-family: 'Arvo', Helvetica, sans-serif;
+	
 	text-transform: uppercase;
 	margin-top: 0;
 }
@@ -69,7 +66,7 @@
 		}
 
 		.the {
-			font-size: 30px;
+			// font-size: 30px;
 			// @include fontSize(30px);
 			margin: 20px -6px 0 0;
 			display: block;
@@ -77,13 +74,13 @@
 		}
 
 		.rockery {
-			font-size: 68px;
+			// font-size: 68px;
 			// @include fontSize(60px);
 		}
 	}
 
 	.site__description {
-		font-size: 19px;
+		// font-size: 19px;
 		// @include fontSize(19px);
 		text-align: center;
 	}

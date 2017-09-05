@@ -170,20 +170,20 @@ label ~ * { margin-top: 0; }
 @media screen and (min-width: 54.375em) { .btn__primary { margin-left: 0; margin-right: 0; } }
 .site__head { padding: 5px 5px 0; border-bottom: 5px solid #FF6C12; }
 .site__head + * { margin-top: 13px; }
+.site__head * { font-family: 'Arvo', Helvetica, sans-serif; }
 
-.logo { text-transform: uppercase; text-align: left; display: block; line-height: 1; -webkit-background-clip: text; background-clip: text; text-shadow: rgba(255, 255, 255, .5) 0px 3px 3px; }
-.logo span { color: #FF6C12; display: block; line-height: 1; }
-.logo .the { font-size: 38px; line-height: 0.8; font-family: 'Arvo', Helvetica, sans-serif; }
-.logo .rockery { font-size: 51px; font-family: 'Arvo', Helvetica, sans-serif; font-weight: bold; margin: 0; }
+.logo { text-transform: uppercase; text-align: left; display: block; line-height: 1; -webkit-background-clip: text; background-clip: text; text-shadow: rgba(255, 255, 255, .5) 0px 3px 3px; font-size: 40px; font-size: 2.5rem; color: #FF6C12; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+.logo * { margin: 0; }
+.logo span.the { font-size: 24px; font-size: 1.5rem; }
+.logo span.rockery { font-weight: bold; }
 
-.site__description { font-size: 20px; font-family: 'Arvo', Helvetica, sans-serif; text-transform: uppercase; margin-top: 0; }
+.site__description { text-transform: uppercase; margin-top: 0; }
 
 @media screen and (min-width: 35em) { .site__head { padding: 1px 0 0; overflow: hidden; }
   .logo { display: inline-block; }
   .logo span { display: inherit; }
-  .logo .the { font-size: 30px; margin: 20px -6px 0 0; display: block; float: left; }
-  .logo .rockery { font-size: 68px; }
-  .site__description { font-size: 19px; text-align: center; } }
+  .logo .the { margin: 20px -6px 0 0; display: block; float: left; }
+  .site__description { text-align: center; } }
 .card { text-align: center; overflow: hidden; position: relative; background-color: white; }
 .card * { text-shadow: 1px 1px 1px white; text-shadow: 0 1px 0 rgba(255, 255, 255, .4); }
 .card__picture { display: block; height: 312px; width: 100%; background-size: cover; background-position: 48%; }
@@ -263,9 +263,6 @@ input:checked + .slide-container .nav label { display: block; }
 
 @media screen and (min-width: 40em) { .slider { width: 50%; float: right; }
   .slider__extra-images { position: absolute; bottom: 1px; display: block; overflow: hidden; height: 52px; padding-left: 0; } }
-.site__description * { font-family: 'Arvo', Helvetica, sans-serif; }
-.site__description a { font-family: 'Arvo', Helvetica, sans-serif; color: #1c1a19; }
-
 .switcher a { font-family: 'Arvo', Helvetica, sans-serif; color: #1c1a19; }
 .switcher a.selected { color: #1c1a19; }
 .switcher a:not(.selected) { color: #f86105; }

@@ -1,10 +1,13 @@
 @charset "UTF-8";
 //Stylesheets imported from the root folder
 @import "base.scss";
+@import "variables.scss";
+
 @import "reset.scss";
 @import "colors.scss";
 @import "typography.scss";
 @import "layout.scss";
+
 @import "globals.scss";
 @import "helpers.scss";
 
