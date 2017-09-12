@@ -3,10 +3,48 @@
 	padding: 5px 5px 0;
 	border-bottom: 5px solid $baseColor;
 
-	& + * {
-		margin-top: $baseline/2;
-	}
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: #f1f1f1;
+
 	* {
 		font-family: 'Arvo', Helvetica, sans-serif;
+	}
+}
+
+.site__title {
+	flex: 1;
+}
+
+.site__menu--toggle {
+	margin: 0;
+	display: block;
+}
+
+.site__description {
+	display: none;
+	text-transform: uppercase;
+	margin: 0;
+	font-family: 'Arvo', Helvetica, sans-serif;
+	
+	& + * {
+		margin-top: 0;
+	}
+}
+
+
+@media screen and (min-width: $preTablet) {
+
+	.site__head {
+
+		padding: 1px 0 0;
+		overflow: hidden;
+	}
+
+	.site__description {
+		// font-size: 19px;
+		// @include fontSize(19px);
+		text-align: center;
 	}
 }

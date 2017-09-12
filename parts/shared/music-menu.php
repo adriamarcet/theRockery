@@ -16,7 +16,7 @@
 		'menu'            => 'music-menu',
 		'container'       => 'nav',
 		'container_id'    => false,
-		'container_class' => 'menu menu__categories',
+		'container_class' => 'site-menu',
 		'menu_class'      => false,
 		'echo'            => true,
 		'fallback_cb'     => 'wp_page_menu',
