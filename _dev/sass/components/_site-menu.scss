@@ -1,29 +1,76 @@
 /*to be change to .site-menu in wp also*/
+	.is-hidden {
+		display: none;
+		opacity: 0;
+		visibility: hidden;
+	}
+		
+	.is-visible {
+		display: block;
+		opacity: 1;
+		visibility: visible;
+	}
 
 .site-menu {
-	// background-color: #f1f1f1;
+	@extend .is-hidden;
+	background-color: #f1f1f1;
 
-	[class*="menu-"] { // class that starts with
-		display: flex;
-		padding-top: $baseline/2;
-		justify-content: flex-start;
-		flex-wrap: wrap;
+	a {
+		color: black;
+		padding: $baseline/2;
 	}
 
-	[class*="menu-item"] {
-		margin-top: 0;
-
+	[class$="-menu"] {
 		display: flex;
-		justify-content: flex-start;
+		flex-direction: row;
 		flex-wrap: wrap;
 
-		flex-grow: 1;
-		flex-basis: 100%;
-
-		a {
+		* + * { margin-top: 0;}
+		
+		&:not(.sub-menu) > [class*="menu-item"] > a {
 			display: flex;
 			flex-grow: 1;
+			min-width: calc((1/3)*100%);
+			justify-content: center;
+		}
+
+		&:not(.sub-menu) > [class*="menu-item"] > *:nth-child(2) {
+			min-width: calc((2/3)*100%);
+		}
+
+		&:not(.sub-menu) > [class*="menu-item"] {
+			display: flex;
+			border-bottom: 1px solid #c1c1c1;
 			flex-basis: 100%;
 		}
+
+		.sub-menu {
+			display: flex;
+			flex-grow: 1;
+
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			flex-grow: 10;
+			align-items: center;
+			padding: 0 0 $baseline/4 0;
+
+			[class*="menu-item"] a {
+				display: flex;
+				flex-grow: 1;
+				flex-basis: auto;
+
+				font-size: 14px;
+				background: #e6e6e6;
+				border-radius: $baseline/4;
+				padding: $baseline/4;
+				margin-top: $baseline/4;
+				margin-right: $baseline/4;
+			}
+		}
 	}
+}
+
+.current-menu-item > a {
+	color: $baseColor;
 }

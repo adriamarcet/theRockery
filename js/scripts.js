@@ -1,8 +1,18 @@
 // this is the DEV_SCRIPTS code
+// Storing variables
+const toggleMenuBtn = document.querySelector('.site__menu--toggle');
+const siteMenu 		= document.querySelector('.site-menu');
+
 //This is DoingSome.js code
 $(document).ready( function(){
 	console.log("hola caracola");
+
 });
+function toggleMenu(){
+	siteMenu.classList.toggle('is-visible');
+}
+
+toggleMenuBtn.addEventListener('click', toggleMenu );
 // Using smartresize instead of window resize function @http://goo.gl/8DDYIG
 // as it is explained in http://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
 (function($,sr){
@@ -38,7 +48,7 @@ $(function() {
 
 	// Find all YouTube videos
 	var $allVideos = $("iframe[src^='https://www.youtube.com']"),
-	// all videos inside .has-embed sections
+		// all videos inside .has-embed sections
 		$sectionVideos = $(".article__part.has-embed iframe[src^='https://www.youtube.com']"),
 
 		// The element that is fluid width
