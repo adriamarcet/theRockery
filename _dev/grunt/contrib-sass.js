@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 					style: 'compact', // can be nested, compact, compressed, expanded.
 				},
 			files: {
-				'../css/style.css': 'sass/project.scss'
+				'../css/styles.css': 'sass/styles.scss'
 			}
 		} 
 	});

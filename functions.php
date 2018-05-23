@@ -414,7 +414,7 @@
 		//	wp_register_style( $handle, $src, $deps, $ver, $media );
 		wp_register_style(
 			'my-stylesheet--screen', // handle name
-			get_template_directory_uri() . '/css/style.css', // the URL of the stylesheet
+			get_template_directory_uri() . '/css/styles.css', // the URL of the stylesheet
 			// array( 'bootstrap-main' ), // an array of dependent styles
 			array(),
 			'10032016', // version number

@@ -67,7 +67,7 @@ module.exports = function(grunt) {
                     precision: 15
                 },
                 files: {
-                    'css/style.css': 'css/sass/project.scss' // 'destination' : 'source'
+                    'css/styles.css': 'css/sass/styles.scss' // 'destination' : 'source'
                 }
             } 
         }
