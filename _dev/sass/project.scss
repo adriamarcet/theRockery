@@ -1,41 +1,42 @@
 @charset "UTF-8";
 //Stylesheets imported from the root folder
-@import "base.scss";
-@import "variables.scss";
+@import 'settings/variables';
+@import 'tools/functions';
+@import 'tools/mixins';
 
-@import "reset.scss";
-@import "colors.scss";
-@import "typography.scss";
-@import "layout.scss";
+@import "reset";
+@import "colors";
+@import "typography";
+@import "layout";
 
-@import "globals.scss";
-@import "helpers.scss";
+@import "globals";
+@import "helpers";
 
 //Modules or components
-@import "components/inputs.scss";
-@import "components/buttons.scss";
-@import "components/site-head.scss";
-@import "components/logo.scss";
-@import "components/card.scss";
-@import "components/slider.scss";
-@import "components/site-menu.scss";
-@import "components/list.scss";
-@import "components/comments.scss";
-@import "components/footer.scss";
-@import "components/icons.scss";
+@import "components/inputs";
+@import "components/buttons";
+@import "components/site-head";
+@import "components/logo";
+@import "components/card";
+@import "components/slider";
+@import "components/site-menu";
+@import "components/list";
+@import "components/comments";
+@import "components/footer";
+@import "components/icons";
 
-@import "components/title-bar.scss";
+@import "components/title-bar";
 
-@import "components/_article__details.scss";
+@import "components/article__details";
 
 @import "components/recipes/_recipe__ingridients";
-@import "components/recipes/_recipe__notes.scss";
-@import "components/recipes/_recipe__directions.scss";
-@import "components/recipes/_switcher__degrees.scss";
+@import "components/recipes/_recipe__notes";
+@import "components/recipes/_recipe__directions";
+@import "components/recipes/_switcher__degrees";
 
-@import "components/music/_also-played.scss";
+@import "components/music/_also-played";
 
-@import "pages/article.scss";
-@import "pages/_home.scss";
+@import "pages/article";
+@import "pages/_home";
 
-@import "shame.scss"; 
+@import "shame";

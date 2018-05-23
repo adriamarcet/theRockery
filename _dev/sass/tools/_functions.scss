@@ -1,0 +1,17 @@
+@function px2em ($pxval, $base: 16) {
+	// Function to take a pixel value and divide it by a base value in order to
+	// return the size in ems. Default base value is 16px
+
+	@return ($pxval / $base) * 1em; // multiply by 1em to convert px to ems.
+	//@return #{$pxval}px;
+}
+
+@function calculateRem($size) {
+  $remSize: $size/16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
