@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
 	grunt.config('watch', {
-		
+
 		// Watch script files
 		scripts: {
 		    files: ['js/*.js', 'js/**/*.js'],
@@ -39,10 +39,10 @@ module.exports = function(grunt) {
 		},
 
 		options: {
-			// to use this a plugin is needed @https://goo.gl/1dvN5D
+			// to use this plugin is needed @https://goo.gl/1dvN5D
 			livereload: true,
 		}
 	});
-	
+
     grunt.loadNpmTasks('grunt-contrib-watch');
 };

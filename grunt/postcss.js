@@ -3,7 +3,8 @@ module.exports = function(grunt) {
 	grunt.config('postcss', {
 		options: {
 			processors: [
-			  require("postcss-cssnext")() // this includes autoprefixes
+				require("autoprefixer")({ browsers: 'last 2 versions' }),
+				require('cssnano')()
 			]
 		},
 		dist: {
