@@ -5,6 +5,7 @@
     "type": "git",
     "url": "git://github.com/adriamarcet/theRockery"
   },
+  "license": "MIT",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "^0.5.1",
@@ -14,7 +15,6 @@
     "grunt-contrib-watch": "^0.6.1"
   },
   "dependencies": {
-    "npm": "^6.5.0",
-    "npm-check-updates": "^2.15.0"
+    "npm": "^6.5.0"
   }
 }
