@@ -1,20 +1,35 @@
 {
-  "name": "The Rockery theme development",
-  "version": "0.1.0",
+  "name": "the-rockery-wp-theme",
+  "version": "1.0.0",
+  "description": "Wordpress theme for our recipes page therockery.es",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/adriamarcet/theRockery"
+    "url": "git+https://github.com/adriamarcet/theRockery.git"
   },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "recipes",
+    "blog",
+    "food"
+  ],
+  "author": "Adrià Marcet Rovira",
   "license": "MIT",
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-imagemin": "^0.9.4",
-    "grunt-contrib-sass": "^0.9.2",
-    "grunt-contrib-uglify": "^0.9.1",
-    "grunt-contrib-watch": "^0.6.1"
+  "bugs": {
+    "url": "https://github.com/adriamarcet/theRockery/issues"
   },
-  "dependencies": {
-    "npm": "^6.5.0"
+  "homepage": "https://github.com/adriamarcet/theRockery#readme",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-imagemin": "^3.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-postcss": "^0.9.0"
   }
 }
